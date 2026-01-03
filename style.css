@@ -134,3 +134,66 @@ footer {
     .hero h1 { font-size: 2rem; }
     .gallery { grid-template-columns: 1fr; }
 }
+
+/* General spacing for sections */
+section {
+    padding: 100px 5%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* About Section Specifics */
+.about-section {
+    background-color: #696666; /* Light grey background to separate it from Work */
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.about-container {
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    gap: 50px; /* Space between image and text */
+}
+
+.about-image img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover; /* Keeps image from stretching */
+    border-radius: 15px;
+    filter: grayscale(20%); /* Artistic touch */
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.skills-grid {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.skill-category h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Responsive: Stack vertically on small screens */
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .skills-grid {
+        justify-content: center;
+    }
+}
