@@ -24,7 +24,7 @@ export default function Home() {
         <section id="work" className="work-section">
           
           <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-             <h2 className="section-title">Latest Work</h2>
+             <h2 className="section-title">Artworks</h2>
              {/* Link to the full gallery */}
              <Link href="/gallery" style={{ color: '#fff', textDecoration: 'underline' }}>View Full Gallery &rarr;</Link>
           </div>
