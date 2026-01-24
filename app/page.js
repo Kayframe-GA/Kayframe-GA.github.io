@@ -1,6 +1,20 @@
-import Link from 'next/link';
+'use client'; // Required for onClick events and state
+
+import { useState } from 'react';
+
+// Data for your Gallery (Easy to expand to 30+ items)
+const artworks = [
+  { id: 1, src: "/images/sample.png", title: "My Sample 1", desc: "Here will be a description for my first artwork." },
+  { id: 2, src: "/images/sample.png", title: "My Sample 2", desc: "Here will be a description for my second artwork." },
+  { id: 3, src: "/images/sample.png", title: "My Sample 3", desc: "Here will be a description for my third artwork." },
+  { id: 4, src: "/images/sample.png", title: "My Sample 4", desc: "Here will be a description for my fourth artwork." },
+  { id: 5, src: "/images/sample.png", title: "My Sample 5", desc: "Here will be a description for my fifth artwork." },
+  { id: 6, src: "/images/sample.png", title: "My Sample 6", desc: "Here will be a description for my sixth artwork." },
+];
 
 export default function Home() {
+  const [selectedArt, setSelectedArt] = useState(null);
+
   return (
     <>
       <header>
@@ -15,30 +29,38 @@ export default function Home() {
       </header>
 
       <main>
+        {/* Hero Section */}
         <section className="hero">
           <h1>Game Artist with Focus on Concept Art and Sculpting</h1>
           <p>Creating immersive worlds and character designs for games.</p>
         </section>
 
-        <section id="work" className="gallery">
-          <div className="card">
-            <img src="/images/sample.png" alt="First Project" />
-            <div className="overlay"><span>Project Title</span></div>
+        {/* WORK SECTION */}
+        <section id="work" className="work-section">
+          
+          {/* 1. Gallery Subsection */}
+          <h2 className="section-title">Gallery</h2>
+          <div className="gallery-scroll-container">
+            {artworks.map((art) => (
+              <div 
+                key={art.id} 
+                className="gallery-item"
+                onClick={() => setSelectedArt(art)}
+              >
+                <img src={art.src} alt={art.title} />
+              </div>
+            ))}
           </div>
-          <div className="card">
-            <img src="/images/sample.png" alt="Second Project" />
-            <div className="overlay"><span>Project Title</span></div>
+
+          {/* 2. Projects Subsection (Empty Placeholder) */}
+          <h2 className="section-title">Projects</h2>
+          <div className="projects-container">
+            <p>Projects coming soon...</p>
           </div>
-          <div className="card">
-            <img src="/images/sample.png" alt="Third Project" />
-            <div className="overlay"><span>Project Title</span></div>
-          </div>
-          <div className="card">
-            <img src="/images/sample.png" alt="Fourth Project" />
-            <div className="overlay"><span>Project Title</span></div>
-          </div>
+
         </section>
 
+        {/* About Section */}
         <section id="about" className="about-section">
           <div className="about-container">
             <div className="about-image">
@@ -71,6 +93,20 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      {/* LIGHTBOX MODAL */}
+      <div className={`lightbox ${selectedArt ? 'active' : ''}`} onClick={() => setSelectedArt(null)}>
+        <button className="close-btn">&times;</button>
+        {selectedArt && (
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <img src={selectedArt.src} alt={selectedArt.title} />
+            <div className="lightbox-info">
+              <h3>{selectedArt.title}</h3>
+              <p>{selectedArt.desc}</p>
+            </div>
+          </div>
+        )}
+      </div>
 
       <footer>
         <p>&copy; 2026 Kay. Built with passion.</p>
