@@ -1,17 +1,46 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from 'next/link'; // Import Next.js Link for faster navigation
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Artist Name | Game Artist Portfolio",
+  title: "Kay | Game Artist Portfolio",
   description: "Game Artist with Focus on Concept Art and Sculpting",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {/* Navigation moved here to persist across all pages */}
+        <header>
+          <nav>
+            <div className="logo">
+                <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Kay</Link>
+            </div>
+            <ul>
+              {/* Links use /#id to ensure they work from the Gallery page too */}
+              <li><Link href="/#work">Work</Link></li>
+              <li><Link href="/gallery">Gallery</Link></li> {/* NEW LINK */}
+              <li><Link href="/#about">About</Link></li>
+              <li><a href="mailto:email@example.com">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        {children}
+
+        {/* Footer can also be moved here if you want it on every page */}
+        <footer>
+            <p>&copy; 2026 Kay. Built with passion.</p>
+            <div className="socials">
+            <a href="#">ArtStation</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+            </div>
+        </footer>
+      </body>
     </html>
   );
 }

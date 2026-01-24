@@ -1,47 +1,36 @@
-'use client'; // Required for onClick events and state
+// app/page.js
+'use client';
 
 import { useState } from 'react';
-
-// Data for your Gallery (Easy to expand to 30+ items)
-const artworks = [
-  { id: 1, src: "/images/sample.png", title: "My Sample 1", desc: "Here will be a description for my first artwork." },
-  { id: 2, src: "/images/sample.png", title: "My Sample 2", desc: "Here will be a description for my second artwork." },
-  { id: 3, src: "/images/sample.png", title: "My Sample 3", desc: "Here will be a description for my third artwork." },
-  { id: 4, src: "/images/sample.png", title: "My Sample 4", desc: "Here will be a description for my fourth artwork." },
-  { id: 5, src: "/images/sample.png", title: "My Sample 5", desc: "Here will be a description for my fifth artwork." },
-  { id: 6, src: "/images/sample.png", title: "My Sample 6", desc: "Here will be a description for my sixth artwork." },
-];
+import { artworks } from './data'; // Import shared data
+import Link from 'next/link';
 
 export default function Home() {
   const [selectedArt, setSelectedArt] = useState(null);
 
+  // Take only the first 6 items for the "preview" on home page
+  const highlightArtworks = artworks.slice(0, 6); 
+
   return (
     <>
-      <header>
-        <nav>
-          <div className="logo">Kay</div>
-          <ul>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="mailto:email@example.com">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
+      {/* Nav and Footer are now in layout.js! */}
 
       <main>
-        {/* Hero Section */}
         <section className="hero">
           <h1>Game Artist with Focus on Concept Art and Sculpting</h1>
           <p>Creating immersive worlds and character designs for games.</p>
         </section>
 
-        {/* WORK SECTION */}
         <section id="work" className="work-section">
           
-          {/* 1. Gallery Subsection */}
-          <h2 className="section-title">Gallery</h2>
+          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+             <h2 className="section-title">Latest Work</h2>
+             {/* Link to the full gallery */}
+             <Link href="/gallery" style={{ color: '#fff', textDecoration: 'underline' }}>View Full Gallery &rarr;</Link>
+          </div>
+
           <div className="gallery-scroll-container">
-            {artworks.map((art) => (
+            {highlightArtworks.map((art) => (
               <div 
                 key={art.id} 
                 className="gallery-item"
@@ -52,25 +41,21 @@ export default function Home() {
             ))}
           </div>
 
-          {/* 2. Projects Subsection (Empty Placeholder) */}
           <h2 className="section-title">Projects</h2>
           <div className="projects-container">
             <p>Projects coming soon...</p>
           </div>
-
         </section>
 
-        {/* About Section */}
         <section id="about" className="about-section">
+          {/* ... existing about content ... */}
           <div className="about-container">
             <div className="about-image">
               <img src="/images/sample-profile.png" alt="Kay - Game Artist" />
             </div>
-
             <div className="about-content">
               <h2>About Me</h2>
-              <p>I am a Game Artist specialized in bringing digital characters and environments to life. My process blends traditional art fundamentals with modern 3D sculpting workflows.</p>
-
+              <p>I am a Game Artist specialized in bringing digital characters and environments to life.</p>
               <div className="skills-grid">
                 <div className="skill-category">
                   <h3>Specializations</h3>
@@ -94,7 +79,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* LIGHTBOX MODAL */}
+      {/* Lightbox Modal (Keep this here for home page interactions) */}
       <div className={`lightbox ${selectedArt ? 'active' : ''}`} onClick={() => setSelectedArt(null)}>
         <button className="close-btn">&times;</button>
         {selectedArt && (
@@ -107,15 +92,6 @@ export default function Home() {
           </div>
         )}
       </div>
-
-      <footer>
-        <p>&copy; 2026 Kay. Built with passion.</p>
-        <div className="socials">
-          <a href="#">ArtStation</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Instagram</a>
-        </div>
-      </footer>
     </>
   );
 }

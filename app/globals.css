@@ -126,6 +126,24 @@ nav ul li a:hover {
   object-fit: cover;
 }
 
+/* Full Gallery Grid Layout */
+.gallery-grid {
+  display: grid;
+  /* Auto-fill creates as many columns as fit, min 300px wide */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 50px 10%;
+  margin-bottom: 4rem;
+}
+
+/* Reuse the gallery-item style but override specific margins/sizes for grid */
+.gallery-grid .gallery-item {
+  width: 100%;       /* Fill the grid cell */
+  height: 250px;     /* Fixed height for uniformity */
+  margin-right: 0;   /* Remove the margin used for side-scrolling */
+  display: block;
+}
+
 /* Lightbox / Modal */
 .lightbox {
   position: fixed;
