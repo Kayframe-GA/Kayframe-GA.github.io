@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
               <li><Link href="/#work">Work</Link></li>
               <li><Link href="/gallery">Gallery</Link></li> {/* NEW LINK */}
               <li><Link href="/#about">About</Link></li>
-              <li><a href="mailto:email@example.com">Contact</a></li>
+              <li><Link href="/contact">Contact</Link></li>
             </ul>
           </nav>
         </header>
