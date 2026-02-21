@@ -17,7 +17,7 @@ export default function Home() {
 
       <main>
         <section className="hero">
-          <h1>Game Artist with Focus on Concept Art and Sculpting</h1>
+          <h1><span className="highlight-title">Game Artist</span> <span className="skills-subtitle">Concept Art | Illustration | Sculpting | PBR Texturing</span></h1>
           <p>Creating immersive worlds and character designs for games.</p>
         </section>
 

@@ -59,6 +59,23 @@ nav ul li a:hover {
   font-size: 3rem;
   margin-bottom: 1rem;
   color: #fff;
+  font-weight: 300; /* Light weight for the base h1 */
+}
+
+.hero h1 .highlight-title {
+  display: block; /* Stack on its own line or keep inline if preferred? Let's keep inline-block or block for emphasis */
+  font-weight: 800;
+  font-size: 4rem; /* Make it bigger */
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.hero h1 .skills-subtitle {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #ccc;
+  letter-spacing: 1px;
 }
 
 .hero p {
