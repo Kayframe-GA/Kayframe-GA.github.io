@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <header>
           <nav>
             <div className="logo">
-                <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Kay</Link>
+                <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link>
             </div>
             <ul>
               {/* Links use /#id to ensure they work from the Gallery page too */}
