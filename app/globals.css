@@ -278,6 +278,7 @@ section {
   background-color: #696666; 
   border-radius: 20px;
   margin-bottom: 50px;
+  padding: 50px 3%; /* Reduced padding */
 }
 
 .about-container {
@@ -328,3 +329,91 @@ section {
       justify-content: center;
   }
 }
+/* New About Section Typography */
+.about-content .sub-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.about-content .bio-header {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+  color: #e0e0e0;
+}
+
+.text-list {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #ccc;
+}
+
+.text-list li {
+  margin-bottom: 0.5rem;
+}
+
+.text-list strong {
+  color: #fff;
+}
+
+/* Update skills-grid headers to match h4 usage */
+.skill-category h4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #555; /* Add a little separator line */
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+
+/* Updated About Layout */
+.about-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center; /* Vertically center the sidebar */
+}
+
+.bio-text {
+  flex: 4; /* Takes up more space */
+}
+
+.skills-sidebar {
+  flex: 1; /* Takes up less space */
+  min-width: 250px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #444;
+}
+
+.skills-sidebar .skill-category {
+  margin-bottom: 2rem;
+}
+
+.skills-sidebar .skill-category:last-child {
+  margin-bottom: 0;
+}
+
+/* Adjust responsive for the inner split */
+@media (max-width: 1100px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .skills-sidebar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+

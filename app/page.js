@@ -54,22 +54,53 @@ export default function Home() {
               <img src="/images/sample-profile.png" alt="Kay - Game Artist" />
             </div>
             <div className="about-content">
-              <h2>About Me</h2>
-              <p>I am a Game Artist specialized in bringing digital characters and environments to life.</p>
-              <div className="skills-grid">
+              <div className="bio-text">
+                <h2>Hey, I'm Kay!</h2>
+                <h3 className="sub-title">Austrian Game Artist | Concept Art, Sculpting & PBR Texturing</h3>
+                <p>I am a passionate Game Artist currently completing my Diploma in Game Art & 3D Animation at SAE Vienna (expected graduation: Q3 2026). My work lives at the intersection of 2D imagination and 3D technical execution.</p>
+
+                <h3 className="bio-header">My Journey</h3>
+                <p>My artistic path began in 2014, sparked by a deep fascination for Manga, Anime, and Japanese culture. What started with traditional sketches and alcohol markers evolved into a dedicated career path. After years of sharpening my skills in traditional and digital illustration, I decided to take the next step in 2025 by joining the SAE Institute to bridge the gap between classic art and modern game development.</p>
+
+                <h3 className="bio-header">Technical Skillset</h3>
+                <p>During my studies and various projects (including Game Jams), I’ve built a solid foundation in the industry’s leading tools:</p>
+                <ul className="text-list">
+                  <li><strong>3D Pipeline:</strong> Sculpting in ZBrush, Modeling & Animation in Autodesk Maya.</li>
+                  <li><strong>Texturing:</strong> Advanced PBR Texturing workflows in Adobe Substance Painter.</li>
+                  <li><strong>Engine:</strong> Implementation and Animation within Unreal Engine 5.</li>
+                  <li><strong>2D:</strong> Concept Art and Illustration (the core of my Diploma project).</li>
+                </ul>
+
+                <h3 className="bio-header">My Current Focus</h3>
+                <p>For my Diploma project, I am exploring the synergy between 2D Concept Art and Sculpting. I am developing two production-ready characters for an animated short film, collaborating closely with a colleague specialized in 3D Animation to ensure a seamless pipeline from concept to movement.</p>
+
+                <h3 className="bio-header">Beyond the Canvas</h3>
+                <p>When I’m not pushing pixels or sculpting clay, I document my progress on my YouTube channel. I love sharing my "Art Journey" with the community, showing the behind-the-scenes of how a project grows from a simple sketch to a finished illustration.</p>
+              </div>
+
+              <div className="skills-sidebar">
                 <div className="skill-category">
-                  <h3>Specializations</h3>
+                  <h4>Specializations</h4>
                   <ul>
                     <li>Character Design</li>
-                    <li>High-Poly Sculpting</li>
-                    <li>PBR Texturing</li>
+                    <li>Concept Art</li>
+                    <li>Illustration</li>
+                    <li>High-Poly Sculpting (Stylized)</li>
+                    <li>Characters</li>
+                    <li>Creatures</li>
+                    <li>Retopology</li>
+                    <li>PBR Texturing (Stylized)</li>
                   </ul>
                 </div>
                 <div className="skill-category">
-                  <h3>Software</h3>
+                  <h4>Softwares</h4>
                   <ul>
-                    <li>ZBrush & Blender</li>
-                    <li>Substance Painter</li>
+                    <li>Clip Studio Paint</li>
+                    <li>Adobe Photoshop</li>
+                    <li>ZBrush</li>
+                    <li>Autodesk Maya</li>
+                    <li>Marmoset Toolbag</li>
+                    <li>Adobe Substance Painter</li>
                     <li>Unreal Engine 5</li>
                   </ul>
                 </div>
