@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
             <p>&copy; 2026 Kay. Built with passion.</p>
 
             {/* Small stamp */}
-            <div className="footer-stamp" aria-hidden="true">K</div>
+            <img src="/images/Signature.png" alt="Kay's signature" className="footer-stamp" />
         </footer>
       </body>
     </html>
