@@ -33,12 +33,19 @@ export default function RootLayout({ children }) {
 
         {/* Footer can also be moved here if you want it on every page */}
         <footer>
-            <p>&copy; 2026 Kay. Built with passion.</p>
-            <div className="socials">
-            <a href="#">ArtStation</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">Instagram</a>
+            {/* Links row: legal + socials together */}
+            <div className="footer-links">
+                <Link href="/impressum">Impressum</Link>
+                <Link href="/datenschutz">Datenschutzerklärung</Link>
+                <a href="#">ArtStation</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
             </div>
+
+            <p>&copy; 2026 Kay. Built with passion.</p>
+
+            {/* Small stamp */}
+            <div className="footer-stamp" aria-hidden="true">K</div>
         </footer>
       </body>
     </html>
