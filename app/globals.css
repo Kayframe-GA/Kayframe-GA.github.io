@@ -10,11 +10,11 @@
   --brand-main: #8F2E5A;
   --brand-second: #53375F;
 
-  --bg-deep: #0D0815;
-  --bg-surface: #160E22;
-  --bg-elevated: #1E1530;
-  --bg-card: #1A1228;
-  --border: #352848;
+  --bg-deep: #1A1722;
+  --bg-surface: #231E2E;
+  --bg-elevated: #2B2438;
+  --bg-card: #251F30;
+  --border: #3E3650;
   --border-light: #53375F;
   --accent: #8F2E5A;
   --accent-hover: #B84070;
@@ -97,7 +97,6 @@ nav ul li a:hover {
   font-size: 4rem;
   margin-bottom: 0.5rem;
   color: var(--accent);
-  text-shadow: 0 0 40px var(--accent-glow), 0 0 80px rgba(143, 46, 90, 0.15);
 }
 
 .hero h1 .skills-subtitle {
@@ -196,7 +195,7 @@ nav ul li a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(13, 8, 21, 0.95);
+  background-color: rgba(26, 23, 34, 0.95);
   display: flex;
   flex-direction: column;
   justify-content: center;
