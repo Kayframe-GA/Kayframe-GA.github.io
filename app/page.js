@@ -17,8 +17,7 @@ export default function Home() {
 
       <main>
         <section className="hero">
-          <h1><span className="highlight-title">Game Artist</span> <span className="skills-subtitle">Concept Art | Illustration | Sculpting | PBR Texturing</span></h1>
-          <p>Creating immersive worlds and character designs for games.</p>
+          <h1><span className="highlight-title">Kayframe GA</span> <span className="skills-subtitle">Concept Art | Stylized Sculpting</span></h1>
         </section>
 
         <section id="work" className="work-section">
@@ -26,7 +25,7 @@ export default function Home() {
           <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
              <h2 className="section-title">Artworks</h2>
              {/* Link to the full gallery */}
-             <Link href="/gallery" style={{ color: '#fff', textDecoration: 'underline' }}>View Full Gallery &rarr;</Link>
+              <Link href="/gallery" style={{ color: '#8F2E5A', textDecoration: 'underline' }}>View Full Gallery &rarr;</Link>
           </div>
 
           <div className="gallery-scroll-container">
@@ -55,56 +54,45 @@ export default function Home() {
             </div>
             <div className="about-content">
               <div className="bio-text">
-                <h2>Hey, I'm Kay!</h2>
-                <h3 className="sub-title">Austrian Game Artist | Concept Art, Sculpting & PBR Texturing</h3>
-                <p>I am a passionate Game Artist currently completing my Diploma in Game Art & 3D Animation at SAE Vienna (expected graduation: Q3 2026). My work lives at the intersection of 2D imagination and 3D technical execution.</p>
+                <h2>About Me</h2>
+                <h3 className="bio-header">Hi, I’m Monika, but you can call me Kay!</h3>
+                <p>I am an Austrian Game Artist specializing in Concept Art and (Soft) Stylized Sculpting. My mission is simple: translating creative visions into immersive worlds and memorable character designs that make games unforgettable for players.</p>
 
-                <h3 className="bio-header">My Journey</h3>
-                <p>My artistic path began in 2014, sparked by a deep fascination for Manga, Anime, and Japanese culture. What started with traditional sketches and alcohol markers evolved into a dedicated career path. After years of sharpening my skills in traditional and digital illustration, I decided to take the next step in 2025 by joining the SAE Institute to bridge the gap between classic art and modern game development.</p>
+                <h3 className="bio-header">My Journey & Inspiration</h3>
+                <p>My creative journey started back in 2014. To this day, I’m a massive, proud nerd for manga, anime, and Japanese culture — which heavily influences my love for stylized art! In 2025, I took the professional leap and began my Game Art and 3D Animation Diploma at the SAE Institute in Vienna. Here, I fully dedicated myself to specializing in Character Concept Art and 3D Sculpting.</p>
 
                 <h3 className="bio-header">Technical Skillset</h3>
-                <p>During my studies and various projects (including Game Jams), I’ve built a solid foundation in the industry’s leading tools:</p>
-                <ul className="text-list">
-                  <li><strong>3D Pipeline:</strong> Sculpting in ZBrush, Modeling & Animation in Autodesk Maya.</li>
-                  <li><strong>Texturing:</strong> Advanced PBR Texturing workflows in Adobe Substance Painter.</li>
-                  <li><strong>Engine:</strong> Implementation and Animation within Unreal Engine 5.</li>
-                  <li><strong>2D:</strong> Concept Art and Illustration (the core of my Diploma project).</li>
-                </ul>
+                <p>Through rigorous studies, personal projects, and fast-paced Game Jams, I’ve developed a strong workflow across industry-standard software to bring my artistic visions to life.</p>
 
-                <h3 className="bio-header">My Current Focus</h3>
-                <p>For my Diploma project, I am exploring the synergy between 2D Concept Art and Sculpting. I am developing two production-ready characters for an animated short film, collaborating closely with a colleague specialized in 3D Animation to ensure a seamless pipeline from concept to movement.</p>
+                <div className="bio-spacer"></div>
 
-                <h3 className="bio-header">Beyond the Canvas</h3>
-                <p>When I’m not pushing pixels or sculpting clay, I document my progress on my YouTube channel. I love sharing my "Art Journey" with the community, showing the behind-the-scenes of how a project grows from a simple sketch to a finished illustration.</p>
+                <p>When I’m not busy bringing new characters to life, I find inspiration by watching a variety of anime or playing immersive games.</p>
+                <p className="no-gap"><b>Curious to see my skills in action? Feel free to explore my portfolio!</b></p>
               </div>
+            </div>
+          </div>
 
-              <div className="skills-sidebar">
-                <div className="skill-category">
-                  <h4>Specializations</h4>
-                  <ul>
-                    <li>Character Design</li>
-                    <li>Concept Art</li>
-                    <li>Illustration</li>
-                    <li>High-Poly Sculpting (Stylized)</li>
-                    <li>Characters</li>
-                    <li>Creatures</li>
-                    <li>Retopology</li>
-                    <li>PBR Texturing (Stylized)</li>
-                  </ul>
-                </div>
-                <div className="skill-category">
-                  <h4>Softwares</h4>
-                  <ul>
-                    <li>Clip Studio Paint</li>
-                    <li>Adobe Photoshop</li>
-                    <li>ZBrush</li>
-                    <li>Autodesk Maya</li>
-                    <li>Marmoset Toolbag</li>
-                    <li>Adobe Substance Painter</li>
-                    <li>Unreal Engine 5</li>
-                  </ul>
-                </div>
-              </div>
+          <div className="skills-sidebar">
+            <div className="skill-category">
+              <h4>Specializations</h4>
+              <ul>
+                <li>Character Concept Art</li>
+                <li>Stylized Character Sculpting</li>
+                <li>Retopology</li>
+                <li>(Stylized) PBR Texturing</li>
+              </ul>
+            </div>
+            <div className="skill-category">
+              <h4>Softwares</h4>
+              <ul>
+                <li>Clip Studio Paint</li>
+                <li>Adobe Photoshop</li>
+                <li>ZBrush</li>
+                <li>Autodesk Maya</li>
+                <li>Marmoset Toolbag</li>
+                <li>Adobe Substance Painter</li>
+                <li>Unreal Engine 5</li>
+              </ul>
             </div>
           </div>
         </section>
