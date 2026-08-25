@@ -5,7 +5,7 @@ import Link from 'next/link'; // Import Next.js Link for faster navigation
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Kay | Game Artist Portfolio",
+  title: "Kayframe GA Portfolio",
   description: "Game Artist with Focus on Concept Art and Sculpting",
 };
 
