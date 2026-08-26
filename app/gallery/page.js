@@ -12,8 +12,8 @@ export default function GalleryPage() {
       <main style={{ paddingTop: '80px' }}> {/* Padding to account for fixed header if needed, or just visual separation */}
         
         <section className="work-section">
-          <h1 className="section-title artworks-title" style={{ textAlign: 'center' }}>Artwork Collection</h1>
-          <p style={{ textAlign: 'center', color: '#8F6FAA', marginBottom: '3rem' }}>
+          <h1 className="section-title artworks-title gallery-page-title" style={{ textAlign: 'center' }}>Artwork Collection</h1>
+          <p style={{ textAlign: 'center', color: 'var(--text-secondary)', marginBottom: '3rem' }}>
             A complete collection of my artworks and creations.
           </p>
 

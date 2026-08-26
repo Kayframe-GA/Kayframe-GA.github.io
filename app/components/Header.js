@@ -60,7 +60,7 @@ export default function Header() {
           <li className={isActive("/#work") ? "active" : ""}><Link href="/#work">Work</Link></li>
           <li className={isActive("/gallery") ? "active" : ""}><Link href="/gallery">Gallery</Link></li>
           <li className={isActive("/#about") ? "active" : ""}><Link href="/#about">About</Link></li>
-          <li className={isActive("/commissions") ? "active" : ""}><Link href="/commissions">Commissions</Link></li>
+          <li className={`nav-btn ${isActive("/commissions") ? "active" : ""}`}><Link href="/commissions">Commissions</Link></li>
         </ul>
       </nav>
     </header>

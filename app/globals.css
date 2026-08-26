@@ -25,8 +25,8 @@
   --accent-hover: #B84070;
   --accent-dark: #6E1F42;
   --accent-glow: rgba(143, 46, 90, 0.35);
-  --text-primary: #F2E8F5;
-  --text-secondary: #C9ADDA;
+  --text-primary: #C9ADDA;
+  --text-secondary: #F2E8F5;
   --text-muted: #8F6FAA;
   --text-dim: #6B5580;
   --nav-link: #d9d9d9;
@@ -119,6 +119,25 @@ nav ul li a {
   position: relative;
 }
 
+nav ul li.nav-btn a {
+  background-color: var(--new-commissions-open);
+  color: #fff;
+  padding: 0.45rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+nav ul li.nav-btn a:hover {
+  background-color: #8ed49e;
+  box-shadow: 0 0 12px rgba(119, 193, 138, 0.4);
+}
+
+nav ul li.nav-btn.active a {
+  background-color: #8ed49e;
+  color: #fff;
+}
+
 /* Hero Section */
 .hero {
   text-align: center;
@@ -165,6 +184,7 @@ nav ul li a {
   margin-bottom: 2rem;
   border-left: 4px solid var(--accent);
   padding-left: 1rem;
+  color: var(--text-secondary);
 }
 
 .projects-title {
@@ -173,6 +193,10 @@ nav ul li a {
 
 .artworks-title {
   border-left-color: var(--new-commissions-open);
+}
+
+.gallery-page-title {
+  color: var(--text-primary);
 }
 
 /* Horizontal Scrolling Gallery */
@@ -482,7 +506,7 @@ section {
 
 .about-content p {
   margin-bottom: 1rem;
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 .text-list {
