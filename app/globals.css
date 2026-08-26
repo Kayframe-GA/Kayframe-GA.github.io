@@ -17,7 +17,7 @@
 
   --bg-deep: #1A1722;
   --bg-surface: #473c5e;
-  --bg-elevated: #2B2438;
+  --bg-elevated: #473c5e;
   --bg-card: #251F30;
   --border: #3E3650;
   --border-light: #53375F;
@@ -31,7 +31,7 @@
   --text-dim: #6B5580;
   --nav-link: #d9d9d9;
   --nav-hover: #E08AB5;
-  --tag-bg: rgba(143, 46, 90, 0.2);
+  --tag-bg: rgba(199, 23, 93, 0.2);
   --tag-text: #D4A0BF;
 }
 
@@ -575,7 +575,7 @@ section {
 
 .skills-sidebar {
   width: 100%;
-  background-color: rgba(143, 46, 90, 0.08);
+  background-color: rgba(145, 35, 143, 0.15);
   padding: 1.5rem;
   border-radius: 10px;
   border: 1px solid var(--border-light);
