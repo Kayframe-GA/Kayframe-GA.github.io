@@ -145,6 +145,20 @@ nav ul li.nav-btn.active a {
   padding: 5rem 10%;
 }
 
+.hero-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.hero-logo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
@@ -430,6 +444,8 @@ footer p {
 @media (max-width: 768px) {
   .hero h1 { font-size: 2rem; }
   .gallery { grid-template-columns: 1fr; }
+  .hero-title-row { flex-direction: column; gap: 1rem; }
+  .hero-logo { width: 80px; height: 80px; }
 }
 
 /* General spacing for sections */

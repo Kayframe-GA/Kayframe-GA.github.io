@@ -17,7 +17,10 @@ export default function Home() {
 
       <main>
         <section className="hero">
-          <h1><span className="highlight-title">Kayframe GA</span> <span className="skills-subtitle">Stylized Character Artist | Concept & 3D Sculpting</span></h1>
+          <div className="hero-title-row">
+            <img src="/images/01_Logo.png" alt="Kayframe GA Logo" className="hero-logo" />
+            <h1><span className="highlight-title">Kayframe GA</span> <span className="skills-subtitle">Stylized Character Artist | Concept & 3D Sculpting</span></h1>
+          </div>
         </section>
 
         <section id="work" className="work-section">
