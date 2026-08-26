@@ -152,6 +152,10 @@ nav ul li.nav-btn.active a {
   gap: 1.5rem;
 }
 
+.hero-title-row h1 {
+  text-align: left;
+}
+
 .hero-logo {
   width: 200px;
   height: 200px;
