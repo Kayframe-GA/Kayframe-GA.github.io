@@ -17,15 +17,21 @@ export default function Home() {
 
       <main>
         <section className="hero">
-          <h1><span className="highlight-title">Kayframe GA</span> <span className="skills-subtitle">Concept Art | Stylized Sculpting</span></h1>
+          <h1><span className="highlight-title">Kayframe GA</span> <span className="skills-subtitle">Stylized Character Artist | Concept & 3D Sculpting</span></h1>
         </section>
 
         <section id="work" className="work-section">
           
+          <h2 className="section-title projects-title">Projects</h2>
+          <div className="projects-container">
+            <p>Projects coming soon...</p>
+          </div>
+
+          <div style={{ marginTop: '2rem' }}>
           <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-             <h2 className="section-title">Artworks</h2>
+             <h2 className="section-title artworks-title">Artworks</h2>
              {/* Link to the full gallery */}
-              <Link href="/gallery" style={{ color: '#8F2E5A', textDecoration: 'underline' }}>View Full Gallery &rarr;</Link>
+              <Link href="/gallery" style={{ color: 'var(--new-commissions-open)', textDecoration: 'underline' }}>View Full Gallery &rarr;</Link>
           </div>
 
           <div className="gallery-scroll-container">
@@ -40,9 +46,6 @@ export default function Home() {
             ))}
           </div>
 
-          <h2 className="section-title">Projects</h2>
-          <div className="projects-container">
-            <p>Projects coming soon...</p>
           </div>
         </section>
 

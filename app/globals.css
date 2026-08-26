@@ -9,6 +9,11 @@
   /* Kay Brand Palette — Main: rgb(143,46,90) / Second: rgb(83,55,95) */
   --brand-main: #8F2E5A;
   --brand-second: #53375F;
+  --new-background: #2a272d;
+  --new-title-color: #902a55;
+  --new-accent-section-highlight: #b5478d;
+  --new-commissions-open: #77c18a;
+  --new-projects-highlight: #8d634f;
 
   --bg-deep: #1A1722;
   --bg-surface: #231E2E;
@@ -32,7 +37,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--bg-deep);
+  background-color: var(--new-background);
   color: var(--text-primary);
   line-height: 1.6;
 }
@@ -96,7 +101,7 @@ nav ul li a:hover {
   font-weight: 800;
   font-size: 4rem;
   margin-bottom: 0.5rem;
-  color: var(--accent);
+  color: var(--new-title-color);
 }
 
 .hero h1 .skills-subtitle {
@@ -124,6 +129,14 @@ nav ul li a:hover {
   margin-bottom: 2rem;
   border-left: 4px solid var(--accent);
   padding-left: 1rem;
+}
+
+.projects-title {
+  border-left-color: var(--new-projects-highlight);
+}
+
+.artworks-title {
+  border-left-color: var(--new-commissions-open);
 }
 
 /* Horizontal Scrolling Gallery */
@@ -302,7 +315,6 @@ footer p {
   width: 90px;
   height: auto;
   display: block;
-  filter: invert(1);
   opacity: 0.85;
 }
 
