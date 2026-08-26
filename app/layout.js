@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
+import Link from 'next/link';
 import "./globals.css";
-import Link from 'next/link'; // Import Next.js Link for faster navigation
+import Header from './components/Header';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,21 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* Navigation moved here to persist across all pages */}
-        <header>
-          <nav>
-            <div className="logo">
-                <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link>
-            </div>
-            <ul>
-              {/* Links use /#id to ensure they work from the Gallery page too */}
-              <li><Link href="/#work">Work</Link></li>
-              <li><Link href="/gallery">Gallery</Link></li> {/* NEW LINK */}
-              <li><Link href="/#about">About</Link></li>
-              <li><Link href="/commissions">Commissions</Link></li>
-            </ul>
-          </nav>
-        </header>
+        <Header />
 
         {children}
 

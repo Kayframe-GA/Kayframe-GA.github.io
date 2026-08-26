@@ -16,7 +16,7 @@
   --new-projects-highlight: #8d634f;
 
   --bg-deep: #1A1722;
-  --bg-surface: #231E2E;
+  --bg-surface: #473c5e;
   --bg-elevated: #2B2438;
   --bg-card: #251F30;
   --border: #3E3650;
@@ -29,7 +29,7 @@
   --text-secondary: #C9ADDA;
   --text-muted: #8F6FAA;
   --text-dim: #6B5580;
-  --nav-link: #B88FC4;
+  --nav-link: #d9d9d9;
   --nav-hover: #E08AB5;
   --tag-bg: rgba(143, 46, 90, 0.2);
   --tag-text: #D4A0BF;
@@ -81,6 +81,42 @@ nav ul li a {
 
 nav ul li a:hover {
   color: var(--nav-hover);
+}
+
+nav ul li.active a,
+.logo.active {
+  color: var(--nav-hover);
+  position: relative;
+}
+
+nav ul li.active a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--nav-hover);
+  border-radius: 1px;
+}
+
+nav ul li a {
+  position: relative;
+}
+
+.logo.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--nav-hover);
+  border-radius: 1px;
+}
+
+.logo {
+  position: relative;
 }
 
 /* Hero Section */
