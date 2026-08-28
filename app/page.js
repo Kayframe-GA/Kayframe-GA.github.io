@@ -34,7 +34,7 @@ export default function Home() {
           <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
              <h2 className="section-title artworks-title">Artworks</h2>
              {/* Link to the full gallery */}
-              <Link href="/gallery" style={{ color: 'var(--new-commissions-open)', textDecoration: 'underline' }}>View Full Gallery &rarr;</Link>
+              <Link href="/gallery" style={{ color: 'var(--green-accent)', textDecoration: 'underline' }}>View Full Gallery &rarr;</Link>
           </div>
 
           <div className="gallery-scroll-container">

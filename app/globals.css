@@ -6,38 +6,52 @@
 }
 
 :root {
-  /* Kay Brand Palette — Main: rgb(143,46,90) / Second: rgb(83,55,95) */
-  --brand-main: #8F2E5A;
-  --brand-second: #53375F;
-  --new-background: #2a272d;
-  --new-title-color: #902a55;
-  --new-accent-section-highlight: #b5478d;
-  --new-commissions-open: #77c18a;
-  --new-projects-highlight: #8d634f;
+  /* ============================================================
+     COLOR TOKENS
+     Organized by where each color is used.
+     ============================================================ */
 
-  --bg-deep: #1A1722;
-  --bg-surface: #473c5e;
-  --bg-elevated: #473c5e;
-  --bg-card: #251F30;
-  --border: #3E3650;
-  --border-light: #53375F;
-  --accent: #8F2E5A;
-  --accent-hover: #B84070;
-  --accent-dark: #6E1F42;
-  --accent-glow: rgba(143, 46, 90, 0.35);
-  --text-primary: #C9ADDA;
-  --text-secondary: #F2E8F5;
-  --text-muted: #8F6FAA;
-  --text-dim: #6B5580;
-  --nav-link: #d9d9d9;
-  --nav-hover: #E08AB5;
-  --tag-bg: rgba(199, 23, 93, 0.2);
-  --tag-text: #D4A0BF;
+  /* --- Page background (global) --- */
+  --bg-page: #2a272d;              /* body background */
+
+  /* --- Component / section backgrounds --- */
+  --bg-header: #473c5e;            /* sticky header background */
+  --bg-deep: #1A1722;              /* scrollbar track + email template background */
+  --bg-about: #3b3331;             /* about section background */
+  --bg-card: #251F30;              /* cards: CTA / terms / contact panels */
+
+  /* --- Borders --- */
+  --border: #3E3650;               /* header bottom + footer top borders */
+  --border-light: #53375F;         /* light borders on cards, images, dividers */
+
+  /* --- Accent (brand main: #8F2E5A) --- */
+  --accent: #8F2E5A;               /* section title bars, links, buttons */
+  --accent-hover: #B84070;         /* accent rollover states (links) */
+  --accent-dark: #6E1F42;          /* accent dark variant (button hover bg) */
+  --accent-glow: rgba(143, 46, 90, 0.35); /* accent box-shadows / glows */
+
+  /* --- Text --- */
+  --text-primary: #C9ADDA;         /* main headings + emphasis */
+  --text-secondary: #F2E8F5;       /* body / secondary text */
+  --text-muted: #8F6FAA;           /* muted text (hero paragraph, back links) */
+  --text-dim: #6B5580;             /* dimmest text (placeholders, footer) */
+
+  /* --- Navigation --- */
+  --nav-link: #d9d9d9;             /* inactive nav link text */
+  --nav-hover: #E08AB5;            /* active / hovered nav link + underline */
+
+  /* --- Skill tags --- */
+  --tag-bg: #902a55;               /* skill tag pill background */
+
+  /* --- Section-specific highlights --- */
+  --title-highlight: #902a55;      /* hero name highlight (swoosh title) */
+  --green-accent: #77c18a;         /* green accent: "commissions open" button, artworks bar, about section headers */
+  --projects-highlight: #8d634f;   /* projects section title bar */
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--new-background);
+  background-color: var(--bg-page);
   color: var(--text-primary);
   line-height: 1.6;
 }
@@ -48,7 +62,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--bg-surface);
+  background-color: var(--bg-header);
   border-bottom: 1px solid var(--border);
 }
 
@@ -121,7 +135,7 @@ nav ul li a {
 }
 
 nav ul li.nav-btn a {
-  background-color: var(--new-commissions-open);
+  background-color: var(--green-accent);
   color: #fff;
   padding: 0.45rem 1.2rem;
   border-radius: 6px;
@@ -175,7 +189,7 @@ nav ul li.nav-btn.active a {
   font-weight: 800;
   font-size: 4rem;
   margin-bottom: 0.5rem;
-  color: var(--new-title-color);
+  color: var(--title-highlight);
 }
 
 .hero h1 .skills-subtitle {
@@ -207,11 +221,11 @@ nav ul li.nav-btn.active a {
 }
 
 .projects-title {
-  border-left-color: var(--new-projects-highlight);
+  border-left-color: var(--projects-highlight);
 }
 
 .artworks-title {
-  border-left-color: var(--new-commissions-open);
+  border-left-color: var(--green-accent);
 }
 
 .gallery-page-title {
@@ -461,10 +475,13 @@ section {
 
 /* About Section Specifics */
 .about-section {
-  background-color: var(--bg-elevated);
+  background-color: var(--bg-about);
   border-radius: 20px;
   margin-bottom: 50px;
-  padding: 50px 3%;
+  padding: 30px 2%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about-container {
@@ -484,6 +501,7 @@ section {
 .about-content h2 {
   font-size: 2.5rem;
   margin-bottom: 15px;
+  color: var(--green-accent);
 }
 
 .skill-category h3 {
@@ -520,7 +538,7 @@ section {
 
 .about-content .bio-header {
   font-size: 1.5rem;
-  color: var(--text-primary);
+  color: var(--green-accent);
   margin-top: 2rem;
   margin-bottom: 0.5rem;
 }
@@ -589,6 +607,10 @@ section {
   margin-bottom: 0;
 }
 
+.skills-sidebar .skill-category h4 {
+  color: #fff;
+}
+
 .skills-sidebar .skill-category ul {
   display: flex;
   flex-wrap: wrap;
@@ -602,7 +624,7 @@ section {
   padding: 0.35rem 0.75rem;
   border-radius: 5px;
   font-size: 0.9rem;
-  color: var(--tag-text);
+  color: #fff;
 }
 
 .skills-sidebar .skill-category {
