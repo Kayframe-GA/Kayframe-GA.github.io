@@ -18,7 +18,7 @@
   --bg-header: #473c5e;            /* sticky header background */
   --bg-deep: #1A1722;              /* scrollbar track + email template background */
   --bg-about: #3b3331;             /* about section background */
-  --bg-card: #251F30;              /* cards: CTA / terms / contact panels */
+  --bg-card: #362e3d;              /* cards: CTA / terms / contact panels */
 
   /* --- Borders --- */
   --border: #3E3650;               /* header bottom + footer top borders */
@@ -45,7 +45,9 @@
 
   /* --- Section-specific highlights --- */
   --title-highlight: #902a55;      /* hero name highlight (swoosh title) */
-  --green-accent: #77c18a;         /* green accent: "commissions open" button, artworks bar, about section headers */
+  --green-accent: #77c18a;  /* green accent: "commissions open" button, artworks bar, about section headers */
+  --green-accent-hover: #5ca16d;  /* green hover: for email button and link when hovered over */
+  --green-accent-glow: #6cf68f3a;     /* green glow: for email button when hovered over */
   --projects-highlight: #8d634f;   /* projects section title bar */
 }
 
@@ -687,7 +689,7 @@ section {
   display: inline-block;
   margin: 1.5rem 0;
   padding: 1rem 2rem;
-  background-color: var(--accent);
+  background-color: var(--green-accent);
   color: #fff;
   text-decoration: none;
   font-weight: bold;
@@ -696,8 +698,8 @@ section {
 }
 
 .email-link:hover {
-  background-color: var(--accent-dark);
-  box-shadow: 0 0 20px var(--accent-glow);
+  background-color: var(--green-accent-hover);
+  box-shadow: 0 0 20px var(--green-accent-glow);
 }
 
 .email-template {
@@ -770,12 +772,12 @@ section {
 }
 
 .email-inline {
-  color: var(--accent);
+  color: var(--green-accent);
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .email-inline:hover {
-  color: var(--accent-hover);
+  color: var(--green-accent-hover);
 }
