@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getProject, projects } from "../../data";
+import MediaGallery from "./MediaGallery";
 import "./projects.css";
 
 export async function generateStaticParams() {
@@ -58,11 +59,7 @@ function RoteaterLayout({ project }) {
 
         <section className="pp-gallery">
           <h2>Final Asset Gallery</h2>
-          <div className="pp-gallery-grid">
-            {project.media.map((src, i) => (
-              <img key={src} src={src} alt={`${project.title} ${i + 1}`} loading="lazy" />
-            ))}
-          </div>
+          <MediaGallery media={project.media} title={project.title} />
         </section>
       </div>
     </div>

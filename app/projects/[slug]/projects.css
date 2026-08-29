@@ -250,6 +250,51 @@ html {
   transform: scale(1.02);
 }
 
+/* ---------- Rot Eater horizontal scroll gallery ---------- */
+.pp-gallery-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pp-gallery-scroll-item {
+  flex: 0 0 auto;
+  width: clamp(280px, 38vw, 480px);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  cursor: zoom-in;
+  scroll-snap-align: center;
+}
+
+.pp-gallery-scroll-item:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.pp-gallery-scroll-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Lightbox without description */
+.lightbox-content--no-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content--no-info img {
+  max-height: 90vh;
+  margin-bottom: 0;
+}
+
+
 /* ---------- Diplom (split hero + aside sidebar) ---------- */
 .diplom-template {
   display: flex;
