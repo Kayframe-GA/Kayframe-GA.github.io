@@ -1,10 +1,20 @@
 // app/data.js
-export const artworks = [
-    { id: 1, src: "/images/sample.png", title: "My Sample 1", desc: "Description for artwork 1." },
-    { id: 2, src: "/images/sample.png", title: "My Sample 2", desc: "Description for artwork 2." },
-    { id: 3, src: "/images/sample.png", title: "My Sample 3", desc: "Description for artwork 3." },
-    { id: 4, src: "/images/sample.png", title: "My Sample 4", desc: "Description for artwork 4." },
-    { id: 5, src: "/images/sample.png", title: "My Sample 5", desc: "Description for artwork 5." },
-    { id: 6, src: "/images/sample.png", title: "My Sample 6", desc: "Description for artwork 6." },
-    // Add as many as you want here...
-  ];
+const rawArtworks = [
+    { src: "/images/Artworks/optimized/01_Robin_Artwork.webp", title: "Female Robin from \"Fire Emblem Awakening\" - Fanart", desc: "Artwork from 2023.", year: 2023 },
+    { src: "/images/Artworks/optimized/02_Link_Botw_Artwork.webp", title: "Link from \"The Legend of Zelda BOTW\" - Fanart", desc: "Artwork from 2024.", year: 2024 },
+    { src: "/images/Artworks/optimized/03_Frieren_Artwork.webp", title: "Frieren from \"Frieren - Beyond journey's end\" - Fanart", desc: "Artwork from 2025.", year: 2025 },
+    { src: "/images/Artworks/optimized/04_Conan_Artwork.webp", title: "Conan Edogawa from \"Detective Conan\" - Fanart", desc: "Artwork from 2025.", year: 2025 },
+    { src: "/images/Artworks/optimized/05_pumkin_girl_artwork.webp", title: "Deer in the Forest - My OC", desc: "Artwork from 2026.", year: 2026 },
+    { src: "/images/Artworks/optimized/06_Law_Redraw_Artwork.webp", title: "Trafalgar D. Water Law from \"One Piece\" - Fanart", desc: "Artwork from 2026.", year: 2026 },
+];
+
+// The id is derived from the leading number in the filename.
+function extractId(src) {
+  const match = src.match(/(\d+)/);
+  return match ? parseInt(match[1], 10) : 0;
+}
+
+// Sorted so the highest id number is shown first.
+export const artworks = [...rawArtworks]
+  .map((art) => ({ ...art, id: extractId(art.src) }))
+  .sort((a, b) => b.id - a.id);

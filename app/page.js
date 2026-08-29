@@ -8,8 +8,8 @@ import Link from 'next/link';
 export default function Home() {
   const [selectedArt, setSelectedArt] = useState(null);
 
-  // Take only the first 6 items for the "preview" on home page
-  const highlightArtworks = artworks.slice(0, 6); 
+  // Take only the first 5 items for the "preview" on home page
+  const highlightArtworks = artworks.slice(0, 5); 
 
   return (
     <>
@@ -44,7 +44,7 @@ export default function Home() {
                 className="gallery-item"
                 onClick={() => setSelectedArt(art)}
               >
-                <img src={art.src} alt={art.title} />
+                <img src={art.src} alt={art.title} loading="lazy" />
               </div>
             ))}
           </div>

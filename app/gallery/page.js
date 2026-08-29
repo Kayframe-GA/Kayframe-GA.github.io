@@ -24,7 +24,7 @@ export default function GalleryPage() {
                 className="gallery-item"
                 onClick={() => setSelectedArt(art)}
               >
-                <img src={art.src} alt={art.title} />
+                <img src={art.src} alt={art.title} loading="lazy" />
               </div>
             ))}
           </div>
