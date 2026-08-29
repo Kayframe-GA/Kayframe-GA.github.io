@@ -155,6 +155,100 @@ nav ul li.nav-btn.active a {
   color: #fff;
 }
 
+/* Projects Dropdown */
+.nav-dropdown {
+  position: relative;
+  margin-left: 2rem;
+}
+
+.nav-dropdown .nav-dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--nav-link);
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.3s;
+}
+
+.nav-dropdown .nav-dropdown-toggle:hover,
+.nav-dropdown.active .nav-dropdown-toggle {
+  color: var(--nav-hover);
+}
+
+.nav-caret {
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.nav-caret.open {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown.active .nav-dropdown-toggle {
+  position: relative;
+}
+
+.nav-dropdown.active .nav-dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--nav-hover);
+  border-radius: 1px;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 180px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  z-index: 1100;
+}
+
+.nav-dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-menu li {
+  margin: 0;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  color: var(--nav-link);
+  white-space: nowrap;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-dropdown-menu a:hover {
+  background-color: var(--accent-glow);
+  color: var(--nav-hover);
+}
+
 /* Hero Section */
 .hero {
   text-align: center;

@@ -3,11 +3,25 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
+import { projects } from "../data";
 
 export default function Header() {
   const pathname = usePathname();
   const [activeSection, setActiveSection] = useState("home");
+  const [projectsOpen, setProjectsOpen] = useState(false);
+  const projectsRef = useRef(null);
   const observerRef = useRef(null);
+
+  // Close dropdown when clicking outside or on navigation
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (projectsRef.current && !projectsRef.current.contains(e.target)) {
+        setProjectsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     if (pathname !== "/") {
@@ -49,6 +63,8 @@ export default function Header() {
     return pathname === href;
   };
 
+  const onProjectPage = pathname.startsWith("/projects");
+
   return (
     <header>
       <nav>
@@ -59,6 +75,28 @@ export default function Header() {
           {/* Links use /#id to ensure they work from the Gallery page too */}
           <li className={isActive("/#work") ? "active" : ""}><Link href="/#work">Work</Link></li>
           <li className={isActive("/gallery") ? "active" : ""}><Link href="/gallery">Gallery</Link></li>
+          <li
+            className={`nav-dropdown ${onProjectPage || isActive("/projects") ? "active" : ""}`}
+            ref={projectsRef}
+          >
+            <button
+              type="button"
+              className="nav-dropdown-toggle"
+              onClick={() => setProjectsOpen((o) => !o)}
+              aria-expanded={projectsOpen}
+              aria-haspopup="true"
+            >
+              Projects
+              <span className={`nav-caret ${projectsOpen ? "open" : ""}`}>&#9662;</span>
+            </button>
+            <ul className={`nav-dropdown-menu ${projectsOpen ? "open" : ""}`}>
+              {projects.map((proj) => (
+                <li key={proj.slug}>
+                  <Link href={`/projects/${proj.slug}`} onClick={() => setProjectsOpen(false)}>{proj.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </li>
           <li className={isActive("/#about") ? "active" : ""}><Link href="/#about">About</Link></li>
           <li className={`nav-btn ${isActive("/commissions") ? "active" : ""}`}><Link href="/commissions">Commissions</Link></li>
         </ul>

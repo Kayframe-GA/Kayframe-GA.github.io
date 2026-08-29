@@ -1,0 +1,214 @@
+/* ============================================================
+   PROJECT PAGES
+   Each project template has its own distinct representation.
+   ============================================================ */
+
+.project-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 6% 5rem;
+}
+
+.project-main--flush {
+  padding-top: 0;
+}
+
+.pp-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+.pp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.pp-tag {
+  background-color: var(--tag-bg);
+  color: #fff;
+  padding: 0.35rem 0.75rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+}
+
+.pp-media video,
+.dp-media video {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  background-color: #000;
+}
+
+.pp-notfound {
+  text-align: center;
+  padding: 6rem 10%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pp-notfound h1 {
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.pp-notfound a {
+  color: var(--green-accent);
+}
+
+/* ---------- Roteater (hero banner + stacked sections) ---------- */
+html {
+  overflow-x: clip;
+}
+
+.roteater-template .pp-hero {
+  position: relative;
+  width: min(100vw, calc(45vh * 16 / 9));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.roteater-template .pp-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pp-hero-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.pp-hero-caption h1 {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.2vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+}
+
+.roteater-template .pp-body {
+  padding: 2.5rem 0;
+}
+
+.roteater-template .pp-body h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--projects-highlight);
+  padding-left: 1rem;
+  color: var(--text-secondary);
+}
+
+.roteater-template .pp-about,
+.roteater-template .pp-media,
+.roteater-template .pp-gallery {
+  margin-bottom: 3rem;
+}
+
+.roteater-template .pp-about p {
+  color: var(--text-secondary);
+  max-width: 720px;
+}
+
+.pp-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.pp-gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.pp-gallery-grid img:hover {
+  transform: scale(1.02);
+}
+
+/* ---------- Diplom (split hero + aside sidebar) ---------- */
+.diplom-template {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.dp-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.dp-hero-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.dp-hero-main img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+}
+
+.dp-about {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.dp-about h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.dp-about p {
+  color: var(--text-secondary);
+}
+
+.dp-gallery h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-secondary);
+}
+
+.dp-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.dp-gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.dp-gallery-grid img:hover {
+  transform: scale(1.02);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .dp-hero-row {
+    grid-template-columns: 1fr;
+  }
+}
