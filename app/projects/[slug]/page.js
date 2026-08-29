@@ -9,6 +9,9 @@ export async function generateStaticParams() {
 // Each project can define its own `layout` key in data.js.
 // The templates below give each project a distinct visual representation.
 function RoteaterLayout({ project }) {
+  const techSpecs = project.specs.filter((s) => s.label !== "Software");
+  const software = project.specs.find((s) => s.label === "Software");
+
   return (
     <div className="project-project roteater-template">
       <div className="pp-hero">
@@ -20,26 +23,41 @@ function RoteaterLayout({ project }) {
 
       <div className="pp-body">
         <section className="pp-about">
-          <h2>About the project</h2>
-          <p>{project.about}</p>
-          <div className="pp-tags">
-            {project.tags.map((t) => (
-              <span key={t} className="pp-tag">{t}</span>
-            ))}
+          <div className="pp-about-grid">
+            <h2>Project Context</h2>
+            <p>{project.about}</p>
+            <aside className="pp-specs pp-specs--box">
+              <h3 className="pp-specs-title">Technical specs</h3>
+              <ul className="pp-spec-list">
+                {techSpecs.map((s) => (
+                  <li key={s.label} className="pp-spec-item">
+                    <strong className="pp-spec-label">{s.label}:</strong>{" "}
+                    <span className="pp-spec-value">{s.value}</span>
+                  </li>
+                ))}
+              </ul>
+              {software && (
+                <ul className="pp-spec-sub pp-spec-sub--break">
+                  {software.value.split(", ").map((sw) => (
+                    <li key={sw}>{sw}</li>
+                  ))}
+                </ul>
+              )}
+            </aside>
           </div>
         </section>
 
         {project.video && (
           <section className="pp-media">
-            <h2>Showreel</h2>
-            <video controls preload="none" poster={project.poster} src={project.video}>
+            <h2>Turntable Video</h2>
+            <video controls autoPlay loop muted playsInline poster={project.poster} src={project.video}>
               Your browser does not support the video tag.
             </video>
           </section>
         )}
 
         <section className="pp-gallery">
-          <h2>Gallery</h2>
+          <h2>Final Asset Gallery</h2>
           <div className="pp-gallery-grid">
             {project.media.map((src, i) => (
               <img key={src} src={src} alt={`${project.title} ${i + 1}`} loading="lazy" />
@@ -66,9 +84,12 @@ function DiplomLayout({ project }) {
         <aside className="dp-about">
           <h2>About</h2>
           <p>{project.about}</p>
-          <div className="pp-tags">
-            {project.tags.map((t) => (
-              <span key={t} className="pp-tag">{t}</span>
+          <div className="pp-specs">
+            {project.specs.map((s) => (
+              <div key={s.label} className="pp-spec">
+                <span className="pp-spec-label">{s.label}</span>
+                <span className="pp-spec-value">{s.value}</span>
+              </div>
             ))}
           </div>
         </aside>

@@ -37,8 +37,12 @@ const rawProjects = [
     ],
     video: "/images/Projects/01_RotEater/Rot_Eater.mp4",
     poster: "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_1.webp",
-    about: "A stylized sculpted character with a distinct art direction and showcase.",
-    tags: ["ZBrush", "Marmoset Toolbag", "Substance Painter"],
+    about: "For my first sculpting project, I spent three months learning the complete 3D character pipeline to create this fully game-ready creature. My goal was to faithfully recreate the game's stylized aesthetic while adding a few personal design touches.",
+    specs: [
+      { label: "Polycount", value: "23.3K Tris" },
+      { label: "Workflow", value: "High-to-Low Poly" },
+      { label: "Software", value: "ZBrush, Autodesk Maya, Substance 3D Painter, Marmoset Toolbag 5" },
+    ],
   },
   {
     slug: "diplom",
@@ -53,7 +57,11 @@ const rawProjects = [
     video: "/images/Projects/02_Diplom/02_Sculpting/Rae_Turntable.mp4",
     poster: "/images/Projects/optimized/02_Diplom/02_Sculpting/HeroShot.webp",
     about: "Diploma project spanning concept art and 3D sculpting.",
-    tags: ["Concept Art", "ZBrush", "Autodesk Maya"],
+    specs: [
+      { label: "Polycount", value: "77.2K Tris" },
+      { label: "Workflow", value: "High-to-Low Poly" },
+      { label: "Software", value: "Adobe Photoshop, ZBrush, Autodesk Maya, Substance 3D Painter, Marmoset Toolbag 5, Unreal Engine 5" },
+    ],
   },
 ];
 
