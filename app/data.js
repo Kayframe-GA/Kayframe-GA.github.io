@@ -49,17 +49,26 @@ const rawProjects = [
   },
   {
     slug: "diplom",
-    title: "Rae - Diplom Project",
-    subtitle: "Concept & Sculpting Showcase",
+    title: "Rae",
+    subtitle: "Different Frame (Diploma Project)",
     hero: "/images/Projects/optimized/02_Diplom/02_Sculpting/HeroShot.webp",
-    media: [
+    transparentHero: "/images/Projects/optimized/02_Diplom/02_Sculpting/Heroshot_transparent_cropped.webp",
+    conceptMedia: [
+      "/images/Projects/optimized/02_Diplom/Concept/Color_Variation_Rae.webp",
       "/images/Projects/optimized/02_Diplom/Concept/Design_Iterations_Rae.webp",
+      "/images/Projects/optimized/02_Diplom/Concept/Silhouetten_Rae.webp",
       "/images/Projects/optimized/02_Diplom/Concept/Turnaround_Rae.webp",
+      "/images/Projects/optimized/02_Diplom/Concept/Thumbnails_Rae.webp",
+    ],
+    finalAssets: [
+      "/images/Projects/optimized/02_Diplom/02_Sculpting/A_Pose_Turnaround.webp",
+      "/images/Projects/optimized/02_Diplom/02_Sculpting/Beautyshot_Portrait.webp",
       "/images/Projects/optimized/02_Diplom/02_Sculpting/Beautyshot_Perspective.webp",
+      "/images/Projects/optimized/02_Diplom/02_Sculpting/Wireframe_and_TextureSets_Overview.webp",
     ],
     video: "/images/Projects/02_Diplom/02_Sculpting/Rae_Turntable.mp4",
     poster: "/images/Projects/optimized/02_Diplom/02_Sculpting/HeroShot.webp",
-    about: "Diploma project spanning concept art and 3D sculpting.",
+    about: "For my diploma project, I collaborated with Melanie Amon-Schwarz over 4.5 months to create Different Frame, a walkthrough game designed to help neurotypical players experience everyday tasks with ADHD. I was responsible for the entire character art pipeline, taking our protagonist, Rae, from the initial 2D concept to the final, game-ready 3D model. \nRae is a non-binary young adult navigating university life in a dorm. I gave them a vibrant, eclectic design to visually reflect their ADHD, translating their energetic personality directly into their clothing and style so their neurodivergence is represented in their aesthetic just as much as the gameplay.",
     specs: [
       { label: "Polycount", value: "77.2K Tris" },
       { label: "Workflow", value: "High-to-Low Poly" },

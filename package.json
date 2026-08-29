@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "optimize:images": "node scripts/optimize-images.js"
+    "optimize:images": "node scripts/optimize-images.js",
+    "trim:transparency": "node scripts/trim-transparency.js"
   },
   "dependencies": {
     "next": "16.1.4",

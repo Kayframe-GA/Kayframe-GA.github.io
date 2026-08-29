@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getProject, projects } from "../../data";
 import MediaGallery from "./MediaGallery";
+import DpGallery from "./dp-gallery";
 import "./projects.css";
 
 export async function generateStaticParams() {
@@ -67,47 +68,75 @@ function RoteaterLayout({ project }) {
 }
 
 function DiplomLayout({ project }) {
+  const techSpecs = project.specs.filter((s) => s.label !== "Software");
+  const software = project.specs.find((s) => s.label === "Software");
+
   return (
     <div className="project-project diplom-template">
-      <header className="dp-header">
-        <h1>{project.title}</h1>
-        <p className="pp-subtitle">{project.subtitle}</p>
-      </header>
-
-      <div className="dp-hero-row">
-        <div className="dp-hero-main">
-          <img src={project.hero} alt={project.title} />
-        </div>
-        <aside className="dp-about">
-          <h2>About</h2>
-          <p>{project.about}</p>
-          <div className="pp-specs">
-            {project.specs.map((s) => (
-              <div key={s.label} className="pp-spec">
-                <span className="pp-spec-label">{s.label}</span>
-                <span className="pp-spec-value">{s.value}</span>
-              </div>
-            ))}
-          </div>
-        </aside>
+      <div className="pp-hero">
+        <img src={project.hero} alt={project.title} />
+      </div>
+      <div className="pp-hero-caption pp-hero-caption--below">
+        <h1>{project.title} - {project.subtitle}</h1>
       </div>
 
-      {project.video && (
-        <section className="dp-media">
-          <video controls preload="none" poster={project.poster} src={project.video}>
-            Your browser does not support the video tag.
-          </video>
+      <div className="pp-body">
+        <section className="pp-about">
+          <div className="pp-about-grid">
+            <h2>Project Context</h2>
+            <p>{project.about}</p>
+            <aside className="pp-specs pp-specs--box">
+              <h3 className="pp-specs-title">Technical specs</h3>
+              <ul className="pp-spec-list">
+                {techSpecs.map((s) => (
+                  <li key={s.label} className="pp-spec-item">
+                    <strong className="pp-spec-label">{s.label}:</strong>{" "}
+                    <span className="pp-spec-value">{s.value}</span>
+                  </li>
+                ))}
+              </ul>
+              {software && (
+                <ul className="pp-spec-sub pp-spec-sub--break">
+                  {software.value.split(", ").map((sw) => (
+                    <li key={sw}>{sw}</li>
+                  ))}
+                </ul>
+              )}
+            </aside>
+          </div>
         </section>
-      )}
 
-      <section className="dp-gallery">
-        <h2>Showcase</h2>
-        <div className="dp-gallery-grid">
-          {project.media.map((src) => (
-            <img key={src} src={src} alt={project.title} loading="lazy" />
-          ))}
-        </div>
-      </section>
+        <section className="dp-character">
+          <div className="dp-character-main">
+            <img
+              className="dp-hero-transparent"
+              src={project.transparentHero}
+              alt={`${project.title} hero shot`}
+            />
+          </div>
+
+          <div className="dp-assets">
+            <div className="dp-concept">
+              <h2>2D Concept Art</h2>
+              <DpGallery media={project.conceptMedia} title={`${project.title} concept`} />
+            </div>
+
+            <div className="dp-final">
+              <h2>Final Character Assets</h2>
+              <DpGallery media={project.finalAssets} title={`${project.title} sculpting`} />
+            </div>
+          </div>
+        </section>
+
+        {project.video && (
+          <section className="pp-media">
+            <h2>Turntable Video</h2>
+            <video controls autoPlay loop muted playsInline poster={project.poster} src={project.video}>
+              Your browser does not support the video tag.
+            </video>
+          </section>
+        )}
+      </div>
     </div>
   );
 }
@@ -133,7 +162,7 @@ export default async function ProjectPage({ params }) {
   const Template = templates[project.slug] || RoteaterLayout;
 
   return (
-    <main className={`project-main ${project.slug === "roteater" ? "project-main--flush" : ""}`}>
+    <main className={`project-main ${project.slug === "roteater" || project.slug === "diplom" ? "project-main--flush" : ""}`}>
       <Template project={project} />
     </main>
   );
