@@ -9,8 +9,14 @@ export default function Header() {
   const pathname = usePathname();
   const [activeSection, setActiveSection] = useState("home");
   const [projectsOpen, setProjectsOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const projectsRef = useRef(null);
   const observerRef = useRef(null);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setProjectsOpen(false);
+  };
 
   // Close dropdown when clicking outside or on navigation
   useEffect(() => {
@@ -69,12 +75,23 @@ export default function Header() {
     <header>
       <nav>
         <div className={`logo ${isActive("/") ? "active" : ""}`}>
-          <Link href="/" style={{ color: "inherit", textDecoration: "none" }}>Home</Link>
+          <Link href="/" onClick={closeMenu} style={{ color: "inherit", textDecoration: "none" }}>Home</Link>
         </div>
-        <ul>
+        <button
+          type="button"
+          className={`nav-toggle ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen((o) => !o)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+        >
+          <span className="nav-toggle-bar"></span>
+          <span className="nav-toggle-bar"></span>
+          <span className="nav-toggle-bar"></span>
+        </button>
+        <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           {/* Links use /#id to ensure they work from the Gallery page too */}
-          <li className={isActive("/#work") ? "active" : ""}><Link href="/#work">Work</Link></li>
-          <li className={isActive("/gallery") ? "active" : ""}><Link href="/gallery">Gallery</Link></li>
+          <li className={isActive("/#work") ? "active" : ""}><Link href="/#work" onClick={closeMenu}>Work</Link></li>
+          <li className={isActive("/gallery") ? "active" : ""}><Link href="/gallery" onClick={closeMenu}>Gallery</Link></li>
           <li
             className={`nav-dropdown ${onProjectPage || isActive("/projects") ? "active" : ""}`}
             ref={projectsRef}
@@ -92,13 +109,13 @@ export default function Header() {
             <ul className={`nav-dropdown-menu ${projectsOpen ? "open" : ""}`}>
               {projects.map((proj) => (
                 <li key={proj.slug}>
-                  <Link href={`/projects/${proj.slug}`} onClick={() => setProjectsOpen(false)}>{proj.title}</Link>
+                  <Link href={`/projects/${proj.slug}`} onClick={closeMenu}>{proj.title}</Link>
                 </li>
               ))}
             </ul>
           </li>
-          <li className={isActive("/#about") ? "active" : ""}><Link href="/#about">About</Link></li>
-          <li className={`nav-btn ${isActive("/commissions") ? "active" : ""}`}><Link href="/commissions">Commissions</Link></li>
+          <li className={isActive("/#about") ? "active" : ""}><Link href="/#about" onClick={closeMenu}>About</Link></li>
+          <li className={`nav-btn ${isActive("/commissions") ? "active" : ""}`}><Link href="/commissions" onClick={closeMenu}>Commissions</Link></li>
         </ul>
       </nav>
     </header>

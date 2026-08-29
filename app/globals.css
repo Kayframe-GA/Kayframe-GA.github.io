@@ -876,3 +876,119 @@ section {
 .email-inline:hover {
   color: var(--green-accent-hover);
 }
+
+/* ---------- Mobile Navigation ---------- */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: var(--nav-link);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle.open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1.25rem 5%;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  nav .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    list-style: none;
+    background-color: var(--bg-header);
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 5% 1rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+  }
+
+  nav .nav-links.open {
+    max-height: 80vh;
+    overflow-y: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  nav .nav-links > li {
+    margin: 0;
+  }
+
+  nav .nav-links > li a,
+  nav .nav-links .nav-dropdown-toggle {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.9rem 0;
+    font-size: 1rem;
+  }
+
+  nav .nav-links > li.nav-btn a {
+    margin-top: 0.75rem;
+    text-align: center;
+  }
+
+  /* Make dropdown render inline in the mobile menu */
+  nav .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 0;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+  }
+
+  nav .nav-dropdown-menu.open {
+    max-height: 400px;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+
+  nav .nav-dropdown-menu a {
+    padding: 0.75rem 1rem;
+  }
+}
