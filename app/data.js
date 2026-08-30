@@ -54,11 +54,11 @@ const rawProjects = [
     hero: "/images/Projects/optimized/02_Diplom/02_Sculpting/HeroShot.webp",
     transparentHero: "/images/Projects/optimized/02_Diplom/02_Sculpting/Heroshot_transparent_cropped.webp",
     conceptMedia: [
-      "/images/Projects/optimized/02_Diplom/Concept/Color_Variation_Rae.webp",
-      "/images/Projects/optimized/02_Diplom/Concept/Design_Iterations_Rae.webp",
-      "/images/Projects/optimized/02_Diplom/Concept/Silhouetten_Rae.webp",
-      "/images/Projects/optimized/02_Diplom/Concept/Turnaround_Rae.webp",
-      "/images/Projects/optimized/02_Diplom/Concept/Thumbnails_Rae.webp",
+      "/images/Projects/optimized/02_Diplom/Concept/01_Silhouetten_Rae.webp",
+      "/images/Projects/optimized/02_Diplom/Concept/02_Thumbnails_Rae.webp",
+      "/images/Projects/optimized/02_Diplom/Concept/03_Design_Iterations_Rae.webp",
+      "/images/Projects/optimized/02_Diplom/Concept/04_Color_Variation_Rae.webp",
+      "/images/Projects/optimized/02_Diplom/Concept/05_Turnaround_Rae.webp",
     ],
     finalAssets: [
       "/images/Projects/optimized/02_Diplom/02_Sculpting/A_Pose_Turnaround.webp",
