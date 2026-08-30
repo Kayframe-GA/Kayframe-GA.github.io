@@ -145,7 +145,7 @@ html {
 .roteater-template .pp-hero,
 .diplom-template .pp-hero {
   position: relative;
-  width: min(100vw, calc(50vh * 16 / 9));
+  width: min(100vw, calc(60vh * 16 / 9));
   left: 50%;
   transform: translateX(-50%);
 }
