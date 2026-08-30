@@ -50,6 +50,7 @@ const rawProjects = [
   {
     slug: "diplom",
     title: "Rae",
+    navTitle: "Rae (Diploma)",
     subtitle: "Different Frame (Diploma Project)",
     hero: "/images/Projects/optimized/02_Diplom/02_Sculpting/HeroShot.webp",
     transparentHero: "/images/Projects/optimized/02_Diplom/02_Sculpting/Heroshot_transparent_cropped.webp",
