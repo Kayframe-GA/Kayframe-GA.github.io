@@ -7,7 +7,7 @@ const path = require('path');
 const sharp = require('sharp');
 
 const MAX_WIDTH = 1600;
-const QUALITY = 80;
+const QUALITY = 100;
 
 // Each root folder is processed; artifact PNGs are converted to WebP.
 // WebP output goes next to the source (inside the source folder).
