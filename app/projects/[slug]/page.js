@@ -59,7 +59,7 @@ function RoteaterLayout({ project }) {
         )}
 
         <section className="pp-gallery">
-          <h2>Final Asset Gallery</h2>
+          <h2>Final Renders</h2>
           <MediaGallery media={project.media} title={project.title} />
         </section>
       </div>
@@ -122,7 +122,7 @@ function DiplomLayout({ project }) {
             </div>
 
             <div className="dp-final">
-              <h2>Final Character Assets</h2>
+              <h2>Final Renders</h2>
               <DpGallery media={project.finalAssets} title={`${project.title} sculpting`} />
             </div>
           </div>
