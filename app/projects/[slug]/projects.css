@@ -166,18 +166,22 @@ html {
   box-sizing: border-box;
 }
 
-.diplom-template .pp-hero-caption--below {
+.pp-hero-caption--below {
   position: static;
   padding: 1.25rem 0 0;
 }
 
 .pp-hero-caption h1 {
   margin: 0;
-  font-size: clamp(1.1rem, 2.2vw, 1.7rem);
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
   font-weight: 700;
   letter-spacing: 1px;
   color: #fff;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+  text-decoration: underline;
+  text-decoration-color: var(--software-text);
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
 }
 
 .roteater-template .pp-body,

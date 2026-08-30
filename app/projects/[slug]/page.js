@@ -18,9 +18,9 @@ function RoteaterLayout({ project }) {
     <div className="project-project roteater-template">
       <div className="pp-hero">
         <img src={project.hero} alt={project.title} />
-        <div className="pp-hero-caption">
-          <h1>{project.title} - {project.subtitle}</h1>
-        </div>
+      </div>
+      <div className="pp-hero-caption pp-hero-caption--below">
+        <h1>{project.title} - {project.subtitle}</h1>
       </div>
 
       <div className="pp-body">

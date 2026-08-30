@@ -42,7 +42,7 @@
 
   /* --- Skill tags --- */
   --tag-bg: #902a55;               /* skill tag pill background */
-  --software-text: #b5478d;         /* software skill text color */
+  --software-text: #b5478d;         /* software skill text color and also used for underlining project titles*/
   /* --- Section-specific highlights --- */
   --title-highlight: #902a55;      /* hero name highlight (swoosh title) */
   --green-accent: #77c18a;  /* green accent: "commissions open" button, artworks bar, about section headers */
