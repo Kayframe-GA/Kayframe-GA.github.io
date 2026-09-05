@@ -16,7 +16,7 @@ export default function Commissions() {
         <div className="cta-section">
             <h2>{t.commissions.readyToStart}</h2>
             <p>{t.commissions.quoteIntro} <strong>&quot;{t.commissions.quoteSubject}: {t.commissions.quotePlaceholder}&quot;</strong> {t.commissions.quoteOutro}</p>
-            <a href="mailto:email@example.com?subject=Commission%20Inquiry%3A%20%5BProject%20Type%5D" className="email-link">email@example.com</a>
+            <a href="mailto:kayframe.ga@outlook.com?subject=Commission%20Inquiry%3A%20%5BProject%20Type%5D" className="email-link">kayframe.ga@outlook.com</a>
 
             <div className="email-template">
                 <h3>{t.commissions.emailTemplateTitle}</h3>
@@ -31,6 +31,16 @@ export default function Commissions() {
         <div className="terms-section">
             <h2>{t.commissions.tosTitle}</h2>
             <p className="terms-intro">{t.commissions.tosIntro}</p>
+
+            <div className="term-item">
+                <h3>{t.commissions.paymentTermsTitle}</h3>
+                <p>{t.commissions.paymentTermsText}</p>
+            </div>
+
+            <div className="term-item">
+                <h3>{t.commissions.feedbackTitle}</h3>
+                <p>{t.commissions.feedbackText}</p>
+            </div>
 
             <div className="term-item">
                 <h3>{t.commissions.usageRightsTitle}</h3>
@@ -56,7 +66,7 @@ export default function Commissions() {
         <div className="contact-section">
             <h2>{t.commissions.contactTitle}</h2>
             <p>{t.commissions.contactText}</p>
-            <p>{t.commissions.contactEmailLabel} <a href="mailto:email@example.com" className="email-inline">email@example.com</a></p>
+            <p>{t.commissions.contactEmailLabel} <a href="mailto:kayframe.ga@outlook.com" className="email-inline">kayframe.ga@outlook.com</a></p>
         </div>
 
       </section>
