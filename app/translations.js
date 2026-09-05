@@ -159,7 +159,7 @@ export const translations = {
       heroSubtitle: "Stylized Character Artist | Concept & 3D Sculpting", // want to keep this in English since its title
       projects: "Projekte",
       projectsComingSoon: "Projekte in K\u00FCrze...",
-      artworks: "Kunstwerke",
+      artworks: "Illustrationen",
       viewFullGallery: "Zur vollst\u00E4ndigen Galerie",
       aboutMe: "\u00DCber mich",
       bioHeader: "Hi, ich bin Monika, aber du kannst mich Kay nennen!",
@@ -182,7 +182,7 @@ export const translations = {
     },
     gallery: {
       title: "Artwork Collection",
-      description: "Eine vollst\u00E4ndige Sammlung meiner Kunstwerke und Kreationen.",
+      description: "Eine vollst\u00E4ndige Sammlung meiner Illustrationen und Kreationen.",
     },
     projects: {
       projectContext: "Projektkontext",
