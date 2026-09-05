@@ -3,24 +3,29 @@
 
 import { useState } from 'react';
 import { artworks } from '../data'; // Import shared data
+import { useLanguage, useTranslations } from '../context/LanguageContext';
 
 export default function GalleryPage() {
+  const { lang } = useLanguage();
+  const t = useTranslations();
   const [selectedArt, setSelectedArt] = useState(null);
+
+  const artDescription = (art) => (lang === 'de' ? art.descDE || art.desc : art.desc);
 
   return (
     <>
       <main style={{ paddingTop: '80px' }}> {/* Padding to account for fixed header if needed, or just visual separation */}
-        
+
         <section className="work-section">
-          <h1 className="section-title artworks-title gallery-page-title" style={{ textAlign: 'center' }}>Artwork Collection</h1>
+          <h1 className="section-title artworks-title gallery-page-title" style={{ textAlign: 'center' }}>{t.gallery.title}</h1>
           <p style={{ textAlign: 'center', color: 'var(--text-secondary)', marginBottom: '3rem' }}>
-            A complete collection of my artworks and creations.
+            {t.gallery.description}
           </p>
 
           <div className="gallery-grid">
             {artworks.map((art) => (
-              <div 
-                key={art.id} 
+              <div
+                key={art.id}
                 className="gallery-item"
                 onClick={() => setSelectedArt(art)}
               >
@@ -40,7 +45,7 @@ export default function GalleryPage() {
             <img src={selectedArt.src} alt={selectedArt.title} />
             <div className="lightbox-info">
               <h3>{selectedArt.title}</h3>
-              <p>{selectedArt.desc}</p>
+              <p>{artDescription(selectedArt)}</p>
             </div>
           </div>
         )}

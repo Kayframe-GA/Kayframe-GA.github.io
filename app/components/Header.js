@@ -4,9 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { projects } from "../data";
+import { useLanguage, useTranslations } from "../context/LanguageContext";
+import LanguageToggle from "./LanguageToggle";
 
 export default function Header() {
   const pathname = usePathname();
+  const { lang } = useLanguage();
+  const t = useTranslations();
   const [activeSection, setActiveSection] = useState("home");
   const [projectsOpen, setProjectsOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,10 +34,7 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    if (pathname !== "/") {
-      setActiveSection(null);
-      return;
-    }
+    if (pathname !== "/") return;
 
     const workEl = document.getElementById("work");
     const aboutEl = document.getElementById("about");
@@ -59,29 +60,35 @@ export default function Header() {
   }, [pathname]);
 
   const isActive = (href) => {
+    const active = pathname !== "/" ? null : activeSection;
     if (href === "/") {
       if (pathname !== "/") return false;
-      if (activeSection === "work" || activeSection === "about") return false;
+      if (active === "work" || active === "about") return false;
       return true;
     }
-    if (href === "/#work") return pathname === "/" && activeSection === "work";
-    if (href === "/#about") return pathname === "/" && activeSection === "about";
+    if (href === "/#work") return pathname === "/" && active === "work";
+    if (href === "/#about") return pathname === "/" && active === "about";
     return pathname === href;
   };
 
   const onProjectPage = pathname.startsWith("/projects");
 
+  const projectLabel = (proj) => {
+    const navTitle = lang === "de" ? proj.navTitleDE : proj.navTitle;
+    return navTitle || proj.title;
+  };
+
   return (
     <header>
       <nav>
         <div className={`logo ${isActive("/") ? "active" : ""}`}>
-          <Link href="/" onClick={closeMenu} style={{ color: "inherit", textDecoration: "none" }}>Home</Link>
+          <Link href="/" onClick={closeMenu} style={{ color: "inherit", textDecoration: "none" }}>{t.nav.home}</Link>
         </div>
         <button
           type="button"
           className={`nav-toggle ${menuOpen ? "open" : ""}`}
           onClick={() => setMenuOpen((o) => !o)}
-          aria-label="Toggle navigation menu"
+          aria-label={t.nav.toggleNav}
           aria-expanded={menuOpen}
         >
           <span className="nav-toggle-bar"></span>
@@ -90,8 +97,8 @@ export default function Header() {
         </button>
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           {/* Links use /#id to ensure they work from the Gallery page too */}
-          <li className={isActive("/#work") ? "active" : ""}><Link href="/#work" onClick={closeMenu}>Work</Link></li>
-          <li className={isActive("/gallery") ? "active" : ""}><Link href="/gallery" onClick={closeMenu}>Gallery</Link></li>
+          <li className={isActive("/#work") ? "active" : ""}><Link href="/#work" onClick={closeMenu}>{t.nav.work}</Link></li>
+          <li className={isActive("/gallery") ? "active" : ""}><Link href="/gallery" onClick={closeMenu}>{t.nav.gallery}</Link></li>
           <li
             className={`nav-dropdown ${onProjectPage || isActive("/projects") ? "active" : ""}`}
             ref={projectsRef}
@@ -103,20 +110,21 @@ export default function Header() {
               aria-expanded={projectsOpen}
               aria-haspopup="true"
             >
-              Projects
+              {t.nav.projects}
               <span className={`nav-caret ${projectsOpen ? "open" : ""}`}>&#9662;</span>
             </button>
             <ul className={`nav-dropdown-menu ${projectsOpen ? "open" : ""}`}>
               {[...projects].reverse().map((proj) => (
                 <li key={proj.slug}>
-                  <Link href={`/projects/${proj.slug}`} onClick={closeMenu}>{proj.navTitle || proj.title}</Link>
+                  <Link href={`/projects/${proj.slug}`} onClick={closeMenu}>{projectLabel(proj)}</Link>
                 </li>
               ))}
             </ul>
           </li>
-          <li className={isActive("/#about") ? "active" : ""}><Link href="/#about" onClick={closeMenu}>About</Link></li>
-          <li className={`nav-btn ${isActive("/commissions") ? "active" : ""}`}><Link href="/commissions" onClick={closeMenu}>Commissions</Link></li>
+          <li className={isActive("/#about") ? "active" : ""}><Link href="/#about" onClick={closeMenu}>{t.nav.about}</Link></li>
+          <li className={`nav-btn ${isActive("/commissions") ? "active" : ""}`}><Link href="/commissions" onClick={closeMenu}>{t.nav.commissions}</Link></li>
         </ul>
+        <LanguageToggle />
       </nav>
     </header>
   );
