@@ -49,12 +49,17 @@ function RoteaterLayout({ project }) {
           </div>
         </section>
 
-        {project.video && (
+        {project.youtubeId && (
           <section className="pp-media">
             <h2>Turntable Video</h2>
-            <video controls autoPlay loop muted playsInline poster={project.poster} src={project.video}>
-              Your browser does not support the video tag.
-            </video>
+            <div className="pp-media-video">
+              <iframe
+                src={`https://www.youtube.com/embed/${project.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${project.youtubeId}&controls=1`}
+                title="Turntable Video"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              />
+            </div>
           </section>
         )}
 
@@ -128,12 +133,17 @@ function DiplomLayout({ project }) {
           </div>
         </section>
 
-        {project.video && (
+        {project.youtubeId && (
           <section className="pp-media">
             <h2>Turntable Video</h2>
-            <video controls autoPlay loop muted playsInline poster={project.poster} src={project.video}>
-              Your browser does not support the video tag.
-            </video>
+            <div className="pp-media-video">
+              <iframe
+                src={`https://www.youtube.com/embed/${project.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${project.youtubeId}&controls=1`}
+                title="Turntable Video"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              />
+            </div>
           </section>
         )}
       </div>

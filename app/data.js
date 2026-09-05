@@ -39,8 +39,7 @@ const rawProjects = [
       "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_5.webp",
       "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_6.webp",
     ],
-    video: "/images/Projects/01_RotEater/Rot_Eater.mp4",
-    poster: "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_1.webp",
+    youtubeId: "88dNcWgHN5M",
     about: "For my first sculpting project, I spent three months learning the complete 3D character pipeline to create this fully game-ready creature. My goal was to faithfully recreate the game's stylized aesthetic while adding a few personal design touches.",
     specs: [
       { label: "Polycount", value: "23.3K Tris" },
@@ -68,8 +67,7 @@ const rawProjects = [
       "/images/Projects/optimized/02_Diplom/02_Sculpting/Beautyshot_Perspective.webp",
       "/images/Projects/optimized/02_Diplom/02_Sculpting/Wireframe_and_TextureSets_Overview.webp",
     ],
-    video: "/images/Projects/02_Diplom/02_Sculpting/Rae_Turntable.mp4",
-    poster: "/images/Projects/optimized/02_Diplom/02_Sculpting/HeroShot.webp",
+    youtubeId: "iUhlIM7viTY",
     about: "For my diploma project, I collaborated with Melanie Amon-Schwarz over 4.5 months to create Different Frame, a walkthrough game designed to help neurotypical players experience everyday tasks with ADHD. I was responsible for the entire character art pipeline, taking our protagonist, Rae, from the initial 2D concept to the final, game-ready 3D model. \nRae is a non-binary young adult navigating university life in a dorm. I gave them a vibrant, eclectic design to visually reflect their ADHD, translating their energetic personality directly into their clothing and style so their neurodivergence is represented in their aesthetic just as much as the gameplay.",
     specs: [
       { label: "Polycount", value: "77.2K Tris" },

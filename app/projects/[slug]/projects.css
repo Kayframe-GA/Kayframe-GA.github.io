@@ -113,12 +113,22 @@
   text-align: right;
 }
 
-.pp-media video,
-.dp-media video {
-  width: 100%;
+.pp-media-video {
+  position: relative;
   border-radius: 10px;
   border: 1px solid var(--border-light);
   background-color: #000;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.pp-media-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .pp-notfound {
@@ -222,12 +232,12 @@ html {
   margin-bottom: 0.5rem;
 }
 
-.roteater-template .pp-media video,
-.diplom-template .pp-media video {
+.roteater-template .pp-media-video,
+.diplom-template .pp-media-video {
   position: relative;
   width: min(100vw, calc(40vh * 16 / 9));
-  left: 50%;
-  transform: translateX(-50%);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .roteater-template .pp-about p,
