@@ -520,6 +520,7 @@ footer {
   text-align: center;
   padding: 3rem;
   border-top: 1px solid var(--border);
+  background-color: var(--bg-deep);
 }
 
 .footer-links {
