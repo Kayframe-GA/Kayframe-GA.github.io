@@ -53,7 +53,7 @@ const rawProjects = [
     navTitle: "Rae (Diploma)",
     subtitle: "Different Frame (Diploma Project)",
     hero: "/images/Projects/optimized/02_Diplom/02_Sculpting/HeroShot.webp",
-    transparentHero: "/images/Projects/optimized/02_Diplom/02_Sculpting/Heroshot_transparent_cropped.webp",
+    transparentHero: "/images/Projects/optimized/02_Diplom/02_Sculpting/Heroshot_transparent.webp",
     conceptMedia: [
       "/images/Projects/optimized/02_Diplom/Concept/01_Silhouetten_Rae.webp",
       "/images/Projects/optimized/02_Diplom/Concept/02_Thumbnails_Rae.webp",
