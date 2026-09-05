@@ -160,7 +160,7 @@ export const translations = {
       projects: "Projekte",
       projectsComingSoon: "Projekte in K\u00FCrze...",
       artworks: "Illustrationen",
-      viewFullGallery: "Zur vollst\u00E4ndigen Galerie",
+      viewFullGallery: "Gesamte Galerie ansehen",
       aboutMe: "\u00DCber mich",
       bioHeader: "Hi, ich bin Monika, aber du kannst mich Kay nennen!",
       bio1: "Ich bin ein Game Artist aus Österreich mit Fokus auf  Concept Art und (Soft) Stylized Sculpting. Meine Mission ist simpel: kreative Visionen in fesselnde Welten und einprägsame Charakterdesigns verwandeln, die Videospiele für die Community unvergesslich machen.",
