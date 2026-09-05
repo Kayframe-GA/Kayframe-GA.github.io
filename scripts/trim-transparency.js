@@ -79,13 +79,18 @@ async function trim(srcFile) {
   const outFile = outDir
     ? path.join(outDir, path.basename(srcFile))
     : srcFile;
+  const tmpFile = outDir
+    ? outFile
+    : `${srcFile}.tmp${ext || '.png'}`;
 
   if (outDir) fs.mkdirSync(outDir, { recursive: true });
 
   let pipe = sharp(srcFile).extract({ left, top, width, height });
   if (ext === '.webp') pipe = pipe.webp({ lossless: LOSSLESS });
   else if (ext === '.png') pipe = pipe.png();
-  await pipe.toFile(outFile);
+  await pipe.toFile(tmpFile);
+
+  if (outFile === srcFile) fs.renameSync(tmpFile, srcFile);
 
   const srcSize = fs.statSync(srcFile).size;
   const outSize = fs.statSync(outFile).size;

@@ -31,6 +31,7 @@ const rawProjects = [
     subtitle: "Kena: Bridge of Spirits Fanart",
     hero: "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_2.webp",
     media: [
+      "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_0.webp",
       "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_1.webp",
       "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_2.webp",
       "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_3.webp",
