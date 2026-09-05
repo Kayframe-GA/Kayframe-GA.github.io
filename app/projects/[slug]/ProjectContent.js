@@ -6,6 +6,22 @@ import Link from 'next/link';
 import MediaGallery from './MediaGallery';
 import DpGallery from './dp-gallery';
 
+function AboutParas({ text }) {
+  return (
+    <p>
+      {text
+        .split('\n')
+        .filter((line) => line.trim() !== '')
+        .map((line, i) => (
+          <span key={i}>
+            {i > 0 && <br />}
+            {line}
+          </span>
+        ))}
+    </p>
+  );
+}
+
 function RoteaterLayout({ project, t }) {
   const techSpecs = project.specs.filter((s) => s.label !== "Software");
   const software = project.specs.find((s) => s.label === "Software");
@@ -23,7 +39,7 @@ function RoteaterLayout({ project, t }) {
         <section className="pp-about">
           <div className="pp-about-grid">
             <h2>{t.projects.projectContext}</h2>
-            <p>{project.about}</p>
+            <AboutParas text={project.about} />
             <aside className="pp-specs pp-specs--box">
               <h3 className="pp-specs-title">{t.projects.technicalSpecs}</h3>
               <ul className="pp-spec-list">
@@ -85,7 +101,7 @@ function DiplomLayout({ project, t }) {
         <section className="pp-about">
           <div className="pp-about-grid">
             <h2>{t.projects.projectContext}</h2>
-            <p>{project.about}</p>
+            <AboutParas text={project.about} />
             <aside className="pp-specs pp-specs--box">
               <h3 className="pp-specs-title">{t.projects.technicalSpecs}</h3>
               <ul className="pp-spec-list">
