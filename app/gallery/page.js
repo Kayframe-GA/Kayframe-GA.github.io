@@ -3,28 +3,34 @@
 
 import { useState } from 'react';
 import { artworks } from '../data'; // Import shared data
+import { useLanguage, useTranslations } from '../context/LanguageContext';
 
 export default function GalleryPage() {
+  const { lang } = useLanguage();
+  const t = useTranslations();
   const [selectedArt, setSelectedArt] = useState(null);
+
+  const artDescription = (art) => (lang === 'de' ? art.descDE || art.desc : art.desc);
+  const artTitle = (art) => (lang === 'de' ? art.titleDE || art.title : art.title);
 
   return (
     <>
       <main style={{ paddingTop: '80px' }}> {/* Padding to account for fixed header if needed, or just visual separation */}
-        
+
         <section className="work-section">
-          <h1 className="section-title" style={{ textAlign: 'center', borderColor: '#8F2E5A' }}>Artwork Collection</h1>
-          <p style={{ textAlign: 'center', color: '#8F6FAA', marginBottom: '3rem' }}>
-            A complete collection of my artworks and creations.
+          <h1 className="section-title artworks-title gallery-page-title" style={{ textAlign: 'center' }}>{t.gallery.title}</h1>
+          <p style={{ textAlign: 'center', color: 'var(--text-secondary)', marginBottom: '3rem' }}>
+            {t.gallery.description}
           </p>
 
           <div className="gallery-grid">
             {artworks.map((art) => (
-              <div 
-                key={art.id} 
+              <div
+                key={art.id}
                 className="gallery-item"
                 onClick={() => setSelectedArt(art)}
               >
-                <img src={art.src} alt={art.title} />
+                <img src={art.src} alt={artTitle(art)} loading="lazy" />
               </div>
             ))}
           </div>
@@ -37,10 +43,10 @@ export default function GalleryPage() {
         <button className="close-btn">&times;</button>
         {selectedArt && (
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img src={selectedArt.src} alt={selectedArt.title} />
+            <img src={selectedArt.src} alt={artTitle(selectedArt)} />
             <div className="lightbox-info">
-              <h3>{selectedArt.title}</h3>
-              <p>{selectedArt.desc}</p>
+              <h3>{artTitle(selectedArt)}</h3>
+              <p>{artDescription(selectedArt)}</p>
             </div>
           </div>
         )}

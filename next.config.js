@@ -5,6 +5,9 @@ const nextConfig = {
     unoptimized: true,
   },
   reactStrictMode: true,
+  allowedDevOrigins: process.env.NEXT_PUBLIC_ALLOWED_DEV_ORIGINS
+    ? JSON.parse(process.env.NEXT_PUBLIC_ALLOWED_DEV_ORIGINS)
+    : [],
 };
 
 module.exports = nextConfig;

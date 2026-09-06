@@ -2,14 +2,23 @@
 'use client';
 
 import { useState } from 'react';
-import { artworks } from './data'; // Import shared data
+import { artworks, projects } from './data'; // Import shared data
 import Link from 'next/link';
+import { useLanguage, useTranslations } from './context/LanguageContext';
 
 export default function Home() {
+  const { lang } = useLanguage();
+  const t = useTranslations();
   const [selectedArt, setSelectedArt] = useState(null);
 
-  // Take only the first 6 items for the "preview" on home page
-  const highlightArtworks = artworks.slice(0, 6); 
+  // Take only the first 5 items for the "preview" on home page
+  const highlightArtworks = artworks.slice(0, 5);
+
+  const artDescription = (art) => (lang === 'de' ? art.descDE || art.desc : art.desc);
+  const artTitle = (art) => (lang === 'de' ? art.titleDE || art.title : art.title);
+
+  const cardTitle = (p) => (lang === 'de' ? p.card.titleDE || p.card.title : p.card.title);
+  const cardDesc = (p) => (lang === 'de' ? p.card.descDE || p.card.desc : p.card.desc);
 
   return (
     <>
@@ -17,32 +26,46 @@ export default function Home() {
 
       <main>
         <section className="hero">
-          <h1><span className="highlight-title">Kayframe GA</span> <span className="skills-subtitle">Concept Art | Stylized Sculpting</span></h1>
+          <div className="hero-title-row">
+            <img src="/images/01_Logo.png" alt={t.home.heroLogoAlt} className="hero-logo" />
+            <h1><span className="highlight-title">Kayframe GA</span> <span className="skills-subtitle">{t.home.heroSubtitle}</span></h1>
+          </div>
         </section>
 
         <section id="work" className="work-section">
-          
+
+          <h2 className="section-title projects-title">{t.home.projects}</h2>
+          <div className="projects-scroll">
+            {projects.map((project) => (
+              <Link key={project.slug} href={`/projects/${project.slug}`} className="project-card">
+                <img src={project.card.image} alt={cardTitle(project)} loading="lazy" />
+                <div className="project-card-info">
+                  <p className="project-card-title">{cardTitle(project)}</p>
+                  <p className="project-card-desc">{cardDesc(project)}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div style={{ marginTop: '2rem' }}>
           <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-             <h2 className="section-title">Artworks</h2>
+             <h2 className="section-title artworks-title">{t.home.artworks}</h2>
              {/* Link to the full gallery */}
-              <Link href="/gallery" style={{ color: '#8F2E5A', textDecoration: 'underline' }}>View Full Gallery &rarr;</Link>
+              <Link href="/gallery" className="gallery-link">{t.home.viewFullGallery} &rarr;</Link>
           </div>
 
           <div className="gallery-scroll-container">
             {highlightArtworks.map((art) => (
-              <div 
-                key={art.id} 
+              <div
+                key={art.id}
                 className="gallery-item"
                 onClick={() => setSelectedArt(art)}
               >
-                <img src={art.src} alt={art.title} />
+                <img src={art.src} alt={artTitle(art)} loading="lazy" />
               </div>
             ))}
           </div>
 
-          <h2 className="section-title">Projects</h2>
-          <div className="projects-container">
-            <p>Projects coming soon...</p>
           </div>
         </section>
 
@@ -50,40 +73,39 @@ export default function Home() {
           {/* ... existing about content ... */}
           <div className="about-container">
             <div className="about-image">
-              <img src="/images/sample-profile.png" alt="Kay - Game Artist" />
+              <img src="/images/profile/optimized/Chibi_Me_About_Me.webp" alt={t.home.aboutImageAlt} />
             </div>
             <div className="about-content">
               <div className="bio-text">
-                <h2>About Me</h2>
-                <h3 className="bio-header">Hi, I’m Monika, but you can call me Kay!</h3>
-                <p>I am an Austrian Game Artist specializing in Concept Art and (Soft) Stylized Sculpting. My mission is simple: translating creative visions into immersive worlds and memorable character designs that make games unforgettable for players.</p>
+                <h2>{t.home.aboutMe}</h2>
+                <h3 className="bio-header">{t.home.bioHeader}</h3>
+                <p>{t.home.bio1}</p>
 
-                <h3 className="bio-header">My Journey & Inspiration</h3>
-                <p>My creative journey started back in 2014. To this day, I’m a massive, proud nerd for manga, anime, and Japanese culture — which heavily influences my love for stylized art! In 2025, I took the professional leap and began my Game Art and 3D Animation Diploma at the SAE Institute in Vienna. Here, I fully dedicated myself to specializing in Character Concept Art and 3D Sculpting.</p>
+                <h3 className="bio-header">{t.home.journeyHeader}</h3>
+                <p>{t.home.journey}</p>
 
-                <h3 className="bio-header">Technical Skillset</h3>
-                <p>Through rigorous studies, personal projects, and fast-paced Game Jams, I’ve developed a strong workflow across industry-standard software to bring my artistic visions to life.</p>
+                <h3 className="bio-header">{t.home.skillsetHeader}</h3>
+                <p>{t.home.skillset}</p>
 
                 <div className="bio-spacer"></div>
 
-                <p>When I’m not busy bringing new characters to life, I find inspiration by watching a variety of anime or playing immersive games.</p>
-                <p className="no-gap"><b>Curious to see my skills in action? Feel free to explore my portfolio!</b></p>
+                <p>{t.home.inspiration}</p>
+                <p className="no-gap"><b>{t.home.cta}</b></p>
               </div>
             </div>
           </div>
 
           <div className="skills-sidebar">
             <div className="skill-category">
-              <h4>Specializations</h4>
+              <h4>{t.home.specializations}</h4>
               <ul>
-                <li>Character Concept Art</li>
-                <li>Stylized Character Sculpting</li>
-                <li>Retopology</li>
-                <li>(Stylized) PBR Texturing</li>
+                {t.home.specializationItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
               </ul>
             </div>
             <div className="skill-category">
-              <h4>Softwares</h4>
+              <h4>{t.home.softwares}</h4>
               <ul>
                 <li>Clip Studio Paint</li>
                 <li>Adobe Photoshop</li>
@@ -103,10 +125,10 @@ export default function Home() {
         <button className="close-btn">&times;</button>
         {selectedArt && (
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img src={selectedArt.src} alt={selectedArt.title} />
+            <img src={selectedArt.src} alt={artTitle(selectedArt)} />
             <div className="lightbox-info">
-              <h3>{selectedArt.title}</h3>
-              <p>{selectedArt.desc}</p>
+              <h3>{artTitle(selectedArt)}</h3>
+              <p>{artDescription(selectedArt)}</p>
             </div>
           </div>
         )}
