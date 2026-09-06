@@ -73,7 +73,7 @@ export default function Home() {
           {/* ... existing about content ... */}
           <div className="about-container">
             <div className="about-image">
-              <img src="/images/sample-profile.png" alt={t.home.aboutImageAlt} />
+              <img src="/images/profile/optimized/Chibi_Me_About_Me.webp" alt={t.home.aboutImageAlt} />
             </div>
             <div className="about-content">
               <div className="bio-text">

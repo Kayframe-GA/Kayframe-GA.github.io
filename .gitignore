@@ -50,6 +50,9 @@ AGENTS.md
 !/public/images/sample.png
 !/public/images/sample-profile.png
 !/public/images/01_Logo.png
+!/public/images/profile/
+/public/images/profile/*
+!/public/images/profile/optimized/
 !/public/images/Artworks/
 !/public/images/Projects/
 /public/images/Artworks/*
