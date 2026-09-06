@@ -56,3 +56,7 @@ AGENTS.md
 !/public/images/Artworks/optimized/
 /public/images/Projects/*
 !/public/images/Projects/optimized/
+
+# Data: legal text stays local as reference but is NOT pushed to git.
+/public/data/datenschutz_text/
+/public/data/impressum_text/
