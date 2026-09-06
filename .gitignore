@@ -43,3 +43,16 @@ next-env.d.ts
 /node_modules
 GEMINI.md
 AGENTS.md
+
+# Images: only optimized assets used by the site are committed.
+# Original/unoptimized files stay on disk locally as reference but are NOT pushed to git.
+/public/images/*
+!/public/images/sample.png
+!/public/images/sample-profile.png
+!/public/images/01_Logo.png
+!/public/images/Artworks/
+!/public/images/Projects/
+/public/images/Artworks/*
+!/public/images/Artworks/optimized/
+/public/images/Projects/*
+!/public/images/Projects/optimized/
