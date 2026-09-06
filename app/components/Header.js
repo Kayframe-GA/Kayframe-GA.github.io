@@ -114,7 +114,7 @@ export default function Header() {
               <span className={`nav-caret ${projectsOpen ? "open" : ""}`}>&#9662;</span>
             </button>
             <ul className={`nav-dropdown-menu ${projectsOpen ? "open" : ""}`}>
-              {[...projects].reverse().map((proj) => (
+              {projects.map((proj) => (
                 <li key={proj.slug}>
                   <Link href={`/projects/${proj.slug}`} onClick={closeMenu}>{projectLabel(proj)}</Link>
                 </li>
