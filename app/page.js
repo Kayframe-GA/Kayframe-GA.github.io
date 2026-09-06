@@ -15,6 +15,7 @@ export default function Home() {
   const highlightArtworks = artworks.slice(0, 5);
 
   const artDescription = (art) => (lang === 'de' ? art.descDE || art.desc : art.desc);
+  const artTitle = (art) => (lang === 'de' ? art.titleDE || art.title : art.title);
 
   return (
     <>
@@ -49,7 +50,7 @@ export default function Home() {
                 className="gallery-item"
                 onClick={() => setSelectedArt(art)}
               >
-                <img src={art.src} alt={art.title} loading="lazy" />
+                <img src={art.src} alt={artTitle(art)} loading="lazy" />
               </div>
             ))}
           </div>
@@ -113,9 +114,9 @@ export default function Home() {
         <button className="close-btn">&times;</button>
         {selectedArt && (
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img src={selectedArt.src} alt={selectedArt.title} />
+            <img src={selectedArt.src} alt={artTitle(selectedArt)} />
             <div className="lightbox-info">
-              <h3>{selectedArt.title}</h3>
+              <h3>{artTitle(selectedArt)}</h3>
               <p>{artDescription(selectedArt)}</p>
             </div>
           </div>
