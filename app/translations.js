@@ -87,7 +87,7 @@ export const translations = {
       usageRightsText: "Upon full and final payment of the invoice, the Client is granted exclusive, worldwide, and unlimited commercial rights to use, modify, and distribute the final artwork.",
       portfolioRightsTitle: "Portfolio Rights",
       portfolioRightsText: "The Artist retains the non-exclusive right to display the commissioned artwork in their personal portfolio (website, ArtStation, social media) and promotional materials.",
-      confidentialityTitle: "Confidentiality (Embargo)",
+      confidentialityTitle: "Confidentiality",
       confidentialityText: "The Artist agrees to keep all artwork confidential and will not publish or share it publicly until the Client’s project has been officially released, announced, or until mutual written consent is provided.",
       creditTitle: "Credit & Authorship",
       creditText: "The Client agrees to appropriately credit the Artist (\u201CMonika 'Kay' Grabner \u2013 Character Concept/Sculpting\u201D) in the project's credits or promotional material where applicable and standard for the industry.",
