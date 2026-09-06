@@ -11,7 +11,6 @@ function AboutParas({ text }) {
     <p>
       {text
         .split('\n')
-        .filter((line) => line.trim() !== '')
         .map((line, i) => (
           <span key={i}>
             {i > 0 && <br />}

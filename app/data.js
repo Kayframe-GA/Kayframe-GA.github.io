@@ -94,8 +94,8 @@ const rawProjects = [
       "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_6.webp",
     ],
     youtubeId: "88dNcWgHN5M",
-    about: "For my first sculpting project, I spent three months learning the complete 3D character pipeline to create this fully game-ready creature. My goal was to faithfully recreate the game's stylized aesthetic while adding a few personal design touches.",
-    aboutDE: "In meinem ersten Sculpting-Projekt habe ich mir über drei Monate hinweg die gesamte 3D-Character-Pipeline angeeignet, um diese komplett game-ready optimierte Creature zu entwickeln. Mein Fokus lag darauf, die stilisierte Ästhetik des Spiels detailgetreu einzufangen, während ich dem Modell gleichzeitig eine persönliche Design-Note verliehen habe.",
+    about: "For my first sculpting project, I spent three months learning the complete 3D character pipeline to create this fully game-ready creature. My goal was to faithfully recreate the game's stylized aesthetic while adding a few personal design touches.\n\nBased on the original creature from Kena: Bridge of Spirits (Ember Lab):\nOriginal Concept Art: Kun Vic\nOriginal 3D Sculpt: Rodrigo Gonçalves",
+    aboutDE: "In meinem ersten Sculpting-Projekt habe ich mir über drei Monate hinweg die gesamte 3D-Character-Pipeline angeeignet, um diese komplett game-ready optimierte Creature zu entwickeln. Mein Fokus lag darauf, die stilisierte Ästhetik des Spiels detailgetreu einzufangen, während ich dem Modell gleichzeitig eine persönliche Design-Note verliehen habe.\n\nBasierend auf der originalen Kreatur von Kena: Bridge of Spirits (Ember Lab):\nOriginal Concept Art: Kun Vic\nOriginal 3D Sculpt: Rodrigo Gonçalves",
     specs: [
       { label: "Polycount", value: "23.3K Tris" },
       { label: "Workflow", value: "High-to-Low Poly" },
