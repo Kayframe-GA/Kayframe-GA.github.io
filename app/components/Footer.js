@@ -12,9 +12,9 @@ export default function Footer() {
       <div className="footer-links">
         <Link href="/impressum">{t.footer.legalNotice}</Link>
         <Link href="/datenschutz">{t.footer.privacyPolicy}</Link>
-        <a href="#">ArtStation</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Instagram</a>
+        <a href="https://www.artstation.com/mixedmediakay" target="_blank" rel="noopener noreferrer">ArtStation</a>
+        <a href="https://www.linkedin.com/in/monika-grabner-034432432/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/kayframe_ga/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
 
       <p>{t.footer.builtWith}</p>

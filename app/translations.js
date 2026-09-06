@@ -16,7 +16,7 @@ export const translations = {
     footer: {
       legalNotice: "Legal Notice",
       privacyPolicy: "Privacy Policy",
-      builtWith: "\u00A9 2026 Kay. Built with passion.",
+      builtWith: "\u00A9 2026 Monika Grabner | Kayframe GA",
       logoAlt: "Kay's logo",
     },
     home: {
@@ -155,7 +155,7 @@ export const translations = {
     footer: {
       legalNotice: "Impressum",
       privacyPolicy: "Datenschutzerkl\u00E4rung",
-      builtWith: "\u00A9 2026 Kay. Mit Leidenschaft gebaut.",
+      builtWith: "\u00A9 2026 Monika Grabner | Kayframe GA",
       logoAlt: "Kays Logo",
     },
     home: {
