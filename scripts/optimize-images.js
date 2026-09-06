@@ -23,6 +23,10 @@ const roots = [
     outDir: path.join(__dirname, '..', 'public', 'images', 'Projects', 'optimized'),
     perFolderOut: false,
   },
+  {
+    srcDir: path.join(__dirname, '..', 'public', 'images', 'profile'),
+    outDir: path.join(__dirname, '..', 'public', 'images', 'profile', 'optimized'),
+  },
 ];
 
 // Recursively collect files with a given extension under a directory.
