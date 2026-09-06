@@ -2,7 +2,7 @@
 'use client';
 
 import { useState } from 'react';
-import { artworks } from './data'; // Import shared data
+import { artworks, projects } from './data'; // Import shared data
 import Link from 'next/link';
 import { useLanguage, useTranslations } from './context/LanguageContext';
 
@@ -16,6 +16,9 @@ export default function Home() {
 
   const artDescription = (art) => (lang === 'de' ? art.descDE || art.desc : art.desc);
   const artTitle = (art) => (lang === 'de' ? art.titleDE || art.title : art.title);
+
+  const cardTitle = (p) => (lang === 'de' ? p.card.titleDE || p.card.title : p.card.title);
+  const cardDesc = (p) => (lang === 'de' ? p.card.descDE || p.card.desc : p.card.desc);
 
   return (
     <>
@@ -32,8 +35,16 @@ export default function Home() {
         <section id="work" className="work-section">
 
           <h2 className="section-title projects-title">{t.home.projects}</h2>
-          <div className="projects-container">
-            <p>{t.home.projectsComingSoon}</p>
+          <div className="projects-scroll">
+            {projects.map((project) => (
+              <Link key={project.slug} href={`/projects/${project.slug}`} className="project-card">
+                <img src={project.card.image} alt={cardTitle(project)} loading="lazy" />
+                <div className="project-card-info">
+                  <p className="project-card-title">{cardTitle(project)}</p>
+                  <p className="project-card-desc">{cardDesc(project)}</p>
+                </div>
+              </Link>
+            ))}
           </div>
 
           <div style={{ marginTop: '2rem' }}>

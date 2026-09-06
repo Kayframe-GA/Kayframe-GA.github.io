@@ -23,7 +23,6 @@ export const translations = {
       heroLogoAlt: "Kayframe GA Logo",
       heroSubtitle: "Stylized Character Artist | Concept & 3D Sculpting",
       projects: "Projects",
-      projectsComingSoon: "Projects coming soon...",
       artworks: "Artworks",
       viewFullGallery: "View Full Gallery",
       aboutMe: "About Me",
@@ -214,7 +213,6 @@ export const translations = {
       heroLogoAlt: "Kayframe GA Logo",
       heroSubtitle: "Stylized Character Artist | Concept & 3D Sculpting", // want to keep this in English since its title
       projects: "Projekte",
-      projectsComingSoon: "Projekte in K\u00FCrze...",
       artworks: "Illustrationen",
       viewFullGallery: "Gesamte Galerie ansehen",
       aboutMe: "\u00DCber mich",

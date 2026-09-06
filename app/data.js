@@ -35,30 +35,6 @@ export const artworks = [...rawArtworks]
 // ============================================================
 const rawProjects = [
   {
-    slug: "roteater",
-    title: "Rot Eater",
-    subtitle: "Kena: Bridge of Spirits Fanart",
-    subtitleDE: "Kena: Bridge of Spirits Fanart",
-    hero: "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_2.webp",
-    media: [
-      "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_0.webp",
-      "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_1.webp",
-      "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_2.webp",
-      "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_3.webp",
-      "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_4.webp",
-      "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_5.webp",
-      "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_6.webp",
-    ],
-    youtubeId: "88dNcWgHN5M",
-    about: "For my first sculpting project, I spent three months learning the complete 3D character pipeline to create this fully game-ready creature. My goal was to faithfully recreate the game's stylized aesthetic while adding a few personal design touches.",
-    aboutDE: "In meinem ersten Sculpting-Projekt habe ich mir über drei Monate hinweg die gesamte 3D-Character-Pipeline angeeignet, um diese komplett game-ready optimierte Creature zu entwickeln. Mein Fokus lag darauf, die stilisierte Ästhetik des Spiels detailgetreu einzufangen, während ich dem Modell gleichzeitig eine persönliche Design-Note verliehen habe.",
-    specs: [
-      { label: "Polycount", value: "23.3K Tris" },
-      { label: "Workflow", value: "High-to-Low Poly" },
-      { label: "Software", value: "ZBrush, Autodesk Maya, Substance 3D Painter, Marmoset Toolbag 5" },
-    ],
-  },
-  {
     slug: "diplom",
     title: "Rae",
     navTitle: "Rae (Diploma)",
@@ -67,6 +43,13 @@ const rawProjects = [
     subtitleDE: "Different Frame (Diplomprojekt)",
     hero: "/images/Projects/optimized/02_Diplom/02_Sculpting/HeroShot.webp",
     transparentHero: "/images/Projects/optimized/02_Diplom/02_Sculpting/Heroshot_transparent.webp",
+    card: {
+      image: "/images/Projects/optimized/02_Diplom/02_Sculpting/HeroShot.webp",
+      title: "Rae – Different Frame (Diploma Project)",
+      titleDE: "Rae – Different Frame (Diplom Projekt)",
+      desc: "A complete 2D-to-3D character pipeline featuring a vibrant, non-binary protagonist designed to visually represent ADHD.",
+      descDE: "Eine vollständige 2D-zu-3D-Character-Pipeline mit einer lebendigen, non-binären Hauptfigur, die entworfen wurde, um ADHS visuell darzustellen.",
+    },
     conceptMedia: [
       "/images/Projects/optimized/02_Diplom/Concept/01_Silhouetten_Rae.webp",
       "/images/Projects/optimized/02_Diplom/Concept/02_Thumbnails_Rae.webp",
@@ -87,6 +70,36 @@ const rawProjects = [
       { label: "Polycount", value: "77.2K Tris" },
       { label: "Workflow", value: "High-to-Low Poly" },
       { label: "Software", value: "Adobe Photoshop, ZBrush, Autodesk Maya, Substance 3D Painter, Marmoset Toolbag 5, Unreal Engine 5" },
+    ],
+  },
+  {
+    slug: "roteater",
+    title: "Rot Eater",
+    subtitle: "Kena: Bridge of Spirits Fanart",
+    subtitleDE: "Kena: Bridge of Spirits Fanart",
+    hero: "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_2.webp",
+    card: {
+      image: "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_0.webp",
+      title: "Rot Eater - Kena: Bridge of Spirits Fanart",
+      desc: "A fully game-ready, stylized creature sculpt with personal design touches.",
+      descDE: "Ein komplett game-ready optimierter, stilisierter Creature-Sculpt mit persönlichen Design-Akzenten.",
+    },
+    media: [
+      "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_0.webp",
+      "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_1.webp",
+      "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_2.webp",
+      "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_3.webp",
+      "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_4.webp",
+      "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_5.webp",
+      "/images/Projects/optimized/01_RotEater/Rot_Eater_Beautyshot_6.webp",
+    ],
+    youtubeId: "88dNcWgHN5M",
+    about: "For my first sculpting project, I spent three months learning the complete 3D character pipeline to create this fully game-ready creature. My goal was to faithfully recreate the game's stylized aesthetic while adding a few personal design touches.",
+    aboutDE: "In meinem ersten Sculpting-Projekt habe ich mir über drei Monate hinweg die gesamte 3D-Character-Pipeline angeeignet, um diese komplett game-ready optimierte Creature zu entwickeln. Mein Fokus lag darauf, die stilisierte Ästhetik des Spiels detailgetreu einzufangen, während ich dem Modell gleichzeitig eine persönliche Design-Note verliehen habe.",
+    specs: [
+      { label: "Polycount", value: "23.3K Tris" },
+      { label: "Workflow", value: "High-to-Low Poly" },
+      { label: "Software", value: "ZBrush, Autodesk Maya, Substance 3D Painter, Marmoset Toolbag 5" },
     ],
   },
 ];
