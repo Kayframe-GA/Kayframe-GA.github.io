@@ -735,8 +735,7 @@ section {
 
 .about-image img {
   width: 350px;
-  height: 350px;
-  object-fit: cover;
+  height: auto;
   border-radius: 15px;
   filter: grayscale(20%);
 }
